@@ -1,0 +1,305 @@
+/* ==========================================================================
+    CSS Variables
+   ========================================================================== */
+   
+
+/* ==========================================================================
+   Bootstrap breakpoints
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) { ... }
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) { ... }
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) { ... }
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) { ... }
+   ========================================================================== */
+
+/* ==========================================================================
+   General Tags
+   All HTML tags that need some generic/default styling.
+   No CSS classes or IDs here.
+   ========================================================================== */
+
+   html, 
+   body{
+   }
+   
+   /*---------- Headings ----------*/
+   h1{
+   
+   }
+   h2{
+   
+   }
+   h3{
+   
+   }
+   h4{
+   
+   }
+   h5{
+   
+   }
+   h6{
+   
+   }
+   
+   /*---------- Paragraphs ----------*/
+   p{
+   
+   }
+   
+   /*---------- Links ----------*/
+   a{
+   
+   }
+   a:active,
+   a:hover,
+   a:focus {
+     outline: 0;
+   }
+   
+   /*---------- Images ----------*/
+   img{
+   
+   }
+   
+   /*---------- Lists ----------*/
+   ul,
+   ol{
+   
+   }
+   li{
+   
+   }
+   
+   /*---------- Hr ----------*/
+   hr{
+   
+   }
+   
+   /*---------- Tables ----------*/
+   table{
+   
+   }	
+   tr{
+   
+   }
+   td{
+   
+   }
+   
+   /*---------- Buttons ----------*/
+   button{
+   
+   }
+   
+   *:focus,*:active {
+       outline: none;
+       outline: 0;
+   }
+   
+   /* ==========================================================================
+      Forms
+      ========================================================================== */
+   form{
+   
+   }	
+   input{
+   
+   }
+   input[type="button"]{
+   
+   }
+   input[type="submit"]{
+       
+   }
+   textarea{
+   
+   }
+   
+   /* ==========================================================================
+      Generic Classes
+      Styles shared among multiple elements and/or classes.
+      These are used on more than one section/page/html block.
+      ========================================================================== */
+   
+   /*---------- Colors ----------*/
+   
+   /*---------- Backgrounds ----------*/
+   
+   /*---------- Helpers ----------*/
+   .w-100{
+       max-width: 100%;
+       width: 100%;
+       height: auto;
+   }
+   
+   /*------- Margins -------*/
+   .m-t-xs{margin-top: 15px;}
+   .m-t-sm{margin-top: 30px;}
+   .m-t-md{margin-top: 45px;}
+   .m-t-lg{margin-top: 60px;}
+   .m-t-xl{margin-top: 75px;}
+   .m-b-xs{margin-bottom: 15px;}
+   .m-b-sm{margin-bottom: 30px;}
+   .m-b-md{margin-bottom: 45px;}
+   .m-b-lg{margin-bottom: 60px;}
+   .m-b-xl{margin-bottom: 75px;}
+   
+   /*------- Paddings -------*/
+   .p-t-xs{padding-top: 15px;}
+   .p-t-sm{padding-top: 30px;}
+   .p-t-md{padding-top: 45px;}
+   .p-t-lg{padding-top: 60px;}
+   .p-t-xl{padding-top: 75px;}
+   .p-b-xs{padding-bottom: 15px;}
+   .p-b-sm{padding-bottom: 30px;}
+   .p-b-md{padding-bottom: 45px;}
+   .p-b-lg{padding-bottom: 60px;}
+   .p-b-xl{padding-bottom: 75px;}
+   
+   /* ==========================================================================
+      Structure/Content
+      Styles that define the page structure and/or 
+      are directly related with the page content.
+      ========================================================================== */
+   
+   /*---------- Header ----------*/
+   
+   /*--------- Sidebar ---------*/
+
+   /*Hamburger*/
+   .hamburger {
+      padding: 15px 15px;
+      display: inline-block;
+      cursor: pointer;
+      transition-property: opacity, filter;
+      transition-duration: 0.15s;
+      transition-timing-function: linear;
+      font: inherit;
+      color: inherit;
+      text-transform: none;
+      background-color: transparent;
+      border: 0;
+      margin: 0;
+      overflow: visible; 
+   }
+   .hamburger:hover {
+      opacity: 0.7; 
+   }
+   .hamburger.is-active:hover {
+      opacity: 0.7; 
+   }
+   .hamburger.is-active .hamburger-inner,
+   .hamburger.is-active .hamburger-inner::before,
+   .hamburger.is-active .hamburger-inner::after {
+      background-color: #000; 
+   }
+
+   .hamburger-box {
+      width: 40px;
+      height: 24px;
+      display: inline-block;
+      position: relative; 
+   }
+
+   .hamburger-inner {
+      display: block;
+      top: 50%;
+      margin-top: -2px; 
+   }
+
+   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+      width: 40px;
+      height: 4px;
+      background-color: #000;
+      border-radius: 4px;
+      position: absolute;
+      transition-property: transform;
+      transition-duration: 0.15s;
+      transition-timing-function: ease; 
+   }
+   .hamburger-inner::before, .hamburger-inner::after {
+      content: "";
+      display: block; 
+   }
+   .hamburger-inner::before {
+      top: -10px; 
+   }
+   .hamburger-inner::after {
+      bottom: -10px; 
+   }
+
+   .hamburger--spin .hamburger-inner {
+      transition-duration: 0.22s;
+      transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+   }
+   .hamburger--spin .hamburger-inner::before {
+      transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; 
+   }
+   .hamburger--spin .hamburger-inner::after {
+      transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+   }
+
+   .hamburger--spin.is-active .hamburger-inner {
+      transform: rotate(225deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+   }
+   .hamburger--spin.is-active .hamburger-inner::before {
+      top: 0;
+      opacity: 0;
+      transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; 
+   }
+   .hamburger--spin.is-active .hamburger-inner::after {
+      bottom: 0;
+      transform: rotate(-90deg);
+      transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); 
+   }
+
+   /*--------- Navigation ---------*/
+   nav{
+      display: flex;
+   }
+   nav ul{
+      display: flex;
+      flex: 1;
+      margin: 0;
+      padding: 0;
+   }
+   nav ul li{
+      flex: 1;
+      list-style: none;
+   }
+   nav ul li a{
+
+   }
+   nav ul li a.active{
+      font-weight: bold;
+   }
+
+   /*--------- Body ---------*/
+   main{
+      margin: 3rem auto;
+      max-width: 800px;
+      padding: 0 1rem; 
+   }
+   
+   /*--------- Footer ---------*/
+   footer{
+      width: 100%;
+      text-align: center;
+   }
+   
+   /* ==========================================================================
+      Modules
+      Styles that define module structure and layout.
+      ========================================================================== */
+   
+
+   
+   /* ==========================================================================
+      Fonts
+      ========================================================================== */
