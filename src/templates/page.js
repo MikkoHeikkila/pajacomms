@@ -1,25 +1,32 @@
-import React from "react"
+import React, { Component } from "react"
+import { graphql } from "gatsby"
+
 import Layout from "../components/layout"
 import Container from "../components/container"
 
-export default ({ data }) => {
-
-    console.log(data)
-
-    return(
-
+class PageTemplate extends Component {
+    render() {
+      const currentPage = this.props.data.wordpressPage
+  
+      return (
         <Layout>
             <Container>
-
-                <h1>Sivu</h1>
-
-                <p>Yrityksen muutto, uusi organisaatio, yritysosto,
-                työtapojen muutos tai yt:t. Meiltä saat apua
-                viestinnän suunnitteluun ja tekemiseen.</p>
-
+                <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
+                <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
             </Container>
         </Layout>
+      )
+    }
+  }
 
-    ) 
+  export default PageTemplate
 
-}
+  export const pageQuery = graphql`
+    query($id: String!) {
+      wordpressPage(id: { eq: $id }) {
+        title
+        content
+        date(formatString: "MMMM DD, YYYY")
+      }
+    }
+  `
