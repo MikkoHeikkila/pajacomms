@@ -1,25 +1,17 @@
 import React from "react"
-import { Link } from "gatsby"
-
-const NavItem = props => (
-    <Link
-        activeClassName="active"
-        partiallyActive={true}
-        to={props.pageLink}
-        >
-        {props.pageName}
-    </Link>   
-)
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 export default () => (
     
     <nav>
-        <ul>
-            <li><Link activeClassName="active" to="/">Etusivu</Link></li>
-            <li><NavItem pageLink="/~hungrydemo/demo/pajacommswp/palvelut/" pageName="Palvelut" /></li>
-            <li><NavItem pageLink="/~hungrydemo/demo/pajacommswp/ihmiset/" pageName="Ihmiset" /></li>
-            <li><NavItem pageLink="/~hungrydemo/demo/pajacommswp/meille-toihin/" pageName="Meille töihin" /></li>
-            <li><NavItem pageLink="/~hungrydemo/demo/pajacommswp/ota-yhteytta/" pageName="Ota yhteyttä" /></li>
+        <ul>    
+
+            <li><AniLink to="/">Etusivu (normal)</AniLink></li>
+            <li><AniLink paintDrip to="/palvelut/" hex="#ed8d34">Palvelut (Paint)</AniLink></li>
+            <li><AniLink fade to="/ihmiset/" >Ihmiset (Fade)</AniLink></li>
+            <li><AniLink swipe direction="left" to="/meille-toihin/">Meille töihin (swipe)</AniLink></li>
+            <li><AniLink cover to="/ota-yhteytta/" bg="#ed8d34">Ota yhteyttä (cover)</AniLink></li>
+
         </ul>
     </nav>
 

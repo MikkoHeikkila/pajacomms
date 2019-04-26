@@ -1,5 +1,6 @@
 module.exports = {
     plugins: [
+      `gatsby-plugin-transition-link`,
       {
         resolve: `gatsby-plugin-typography`,
         options: {

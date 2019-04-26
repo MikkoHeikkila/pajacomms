@@ -11,6 +11,7 @@ class PageTemplate extends Component {
       return (
         <Layout>
             <Container>
+                <p dangerouslySetInnerHTML={{ __html: currentPage.slug }} />
                 <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
                 <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
             </Container>
@@ -25,7 +26,9 @@ class PageTemplate extends Component {
     query($id: String!) {
       wordpressPage(id: { eq: $id }) {
         title
+        slug
         content
+        template
         date(formatString: "MMMM DD, YYYY")
       }
     }

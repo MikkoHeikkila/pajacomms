@@ -17,7 +17,7 @@ export default ({ data }) => {
                 
                 <ul>
                     {data.allWordpressPage.edges.map(({ node }, index) => (     
-                        <li>
+                        <li key="{node.guid}">
                             <h4>Title: {node.title}</h4>
                             <p>ID: {node.id}</p>
                             <p>GUID: {node.guid}</p>

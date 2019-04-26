@@ -23,6 +23,7 @@
 
    html, 
    body{
+      overflow-x: hidden;
    }
    
    /*---------- Headings ----------*/
@@ -165,10 +166,36 @@
       Styles that define the page structure and/or 
       are directly related with the page content.
       ========================================================================== */
+
+   #wrapper{
+      display: flex;
+   }
    
    /*---------- Header ----------*/
    
    /*--------- Sidebar ---------*/
+
+   #sidebar{
+      display: flex;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      transform: translateX(-95%);
+      background-color: #48e49b;
+      -webkit-transition: transform 0.75s cubic-bezier(.65,.05,.36,1), -webkit-transform 0.5s cubic-bezier(.25,.46,.45,.94);
+      -moz-transition: transform 0.75s cubic-bezier(.65,.05,.36,1), -webkit-transform 0.5s cubic-bezier(.25,.46,.45,.94);
+      -o-transition: transform 0.75s cubic-bezier(.65,.05,.36,1), -webkit-transform 0.5s cubic-bezier(.25,.46,.45,.94);
+      transition: transform 0.75s cubic-bezier(.65,.05,.36,1), -webkit-transform 0.5s cubic-bezier(.25,.46,.45,.94);
+   }
+   #sidebar--always-visible{
+      flex: 1;
+      text-align: end;
+   }
+
+   #sidebar.active{
+      transform: translateX(0%);
+   }
 
    /*Hamburger*/
    .hamburger {
@@ -262,19 +289,31 @@
    /*--------- Navigation ---------*/
    nav{
       display: flex;
+      flex: 1;
    }
    nav ul{
+      display: -webkit-flex;
       display: flex;
-      flex: 1;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-flex: 1 1;
+      flex: 1 1;
       margin: 0;
       padding: 0;
+      width: 100%;
+      position: absolute;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
    }
    nav ul li{
-      flex: 1;
       list-style: none;
    }
    nav ul li a{
-
+      color: #fff;
+      text-shadow: none;
+      font-size: 2rem;
+      background-image: none;
    }
    nav ul li a.active{
       font-weight: bold;

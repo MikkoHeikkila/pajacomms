@@ -5,19 +5,19 @@ import Footer from "../components/footer"
 
 export default ({ children }) => (
 
-    <div>
-
-        <Header />
+    <div id="wrapper">
 
         <Sidebar />
-
+        
         <main>
+
+            <Header />
 
             {children}
 
-        </main>
+            <Footer />
 
-        <Footer />
+        </main>
 
     </div>
 
