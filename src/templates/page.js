@@ -5,10 +5,13 @@ import Layout from "../components/layout"
 import Container from "../components/container"
 
 class PageTemplate extends Component {
+
     render() {
+
       const currentPage = this.props.data.wordpressPage
   
       return (
+
         <Layout>
             <Container>
                 <p dangerouslySetInnerHTML={{ __html: currentPage.slug }} />
@@ -16,7 +19,9 @@ class PageTemplate extends Component {
                 <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
             </Container>
         </Layout>
+
       )
+      
     }
   }
 

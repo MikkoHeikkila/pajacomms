@@ -3,11 +3,11 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Container from "../components/container"
 
-class PostTemplate extends Component {
-    
+class ReferenceTemplate extends Component {
+
   render() {
 
-    const post = this.props.data.wordpressPost
+    const post = this.props.data.wordpressWpReference
 
     return (
 
@@ -23,11 +23,11 @@ class PostTemplate extends Component {
 
 
 
-export default PostTemplate
+export default ReferenceTemplate
 
 export const pageQuery = graphql`
   query($id: String!) {
-    wordpressPost(id: { eq: $id }) {
+    wordpressWpReference(id: { eq: $id }) {
       title
     }
   }

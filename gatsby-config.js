@@ -93,6 +93,8 @@ module.exports = {
             "**/tags",
             "**/taxonomies",
             "**/users",
+            "**/reference",
+            "**/menus"
           ],
           // Blacklisted routes using glob patterns
           excludedRoutes: ["**/posts/1456"],//Example

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Container from "../components/container"
@@ -18,21 +18,31 @@ export default ({ data }) => {
                 <ul>
                     {data.allWordpressPage.edges.map(({ node }, index) => (     
                         <li key="{node.guid}">
-                            <h4>Title: {node.title}</h4>
-                            <p>ID: {node.id}</p>
-                            <p>GUID: {node.guid}</p>
-                            <p>STATUS: {node.status}</p>
-                            <p>SLUG: {node.slug}</p>
-                            <p>CONTENT: {node.content}</p>
-                            <p>TEMPLATE: {node.template}</p>
-                            <p>MENU ORDER: {node.menu_order}</p>
+                            <Link to={node.slug}>{node.title}</Link>
                         </li>
                     ))}
                 </ul>
 
-                <p>Yrityksen muutto, uusi organisaatio, yritysosto,
-                työtapojen muutos tai yt:t. Meiltä saat apua
-                viestinnän suunnitteluun ja tekemiseen.</p>
+                <h1>Kaikki artikkelit:</h1>
+                
+                <ul>
+                    {data.allWordpressPost.edges.map(({ node }, index) => (     
+                        <li key="{node.guid}">
+                            <Link to={node.slug}>{node.title}</Link>
+                        </li>
+                    ))}
+                </ul>
+
+                <h1>Kaikki referenssit:</h1>
+                
+                <ul>
+                    {data.allWordpressWpReference.edges.map(({ node }, index) => (   
+
+                        <li key="{node.guid}">
+                            <Link to={node.slug}>{node.title}</Link>
+                        </li>
+                    ))}
+                </ul>
 
             </Container>
         </Layout>
@@ -57,5 +67,27 @@ export const query = graphql`
                 }
             }
         } 
+        allWordpressPost {
+            edges {
+                node {
+                id
+                guid
+                status
+                title
+                slug
+                content
+                }
+            }
+        } 
+        allWordpressWpReference {
+            edges {
+                node {
+                title
+                id
+                type
+                slug
+                }
+            }
+        }
     }
 `
