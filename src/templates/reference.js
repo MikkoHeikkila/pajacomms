@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import Container from "../components/container"
+import Layout from "../components/Layout"
+import Container from "../components/Container"
 
 class ReferenceTemplate extends Component {
 
@@ -14,6 +14,7 @@ class ReferenceTemplate extends Component {
         <Layout>
             <Container>
                 <h1>{post.title}</h1>
+                <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </Container>
         </Layout>
 
@@ -27,6 +28,7 @@ export const pageQuery = graphql`
   query($id: String!) {
     wordpressWpReference(id: { eq: $id }) {
       title
+      content
     }
   }
 `

@@ -1,57 +1,56 @@
 import React, { Component } from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import Container from "../components/container"
+import Layout from "../components/Layout"
+import Container from "../components/Container"
+import ReferencePreview from "../components/ReferencePreview";
 
 class PageTemplate extends Component {
 
-    render() {
+  render() {
 
-      const currentPage = this.props.data.wordpressPage
-  
-      return (
+    const currentPage = this.props.data.wordpressPage
 
-        <Layout>
-            <Container>
-                <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
-                <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
-            </Container>
-            <Container>
-              <ul>
+    return (
+
+      <Layout>
+          <Container>
+
+              <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
+              <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
+
+              <div className="flex-container">
                 {this.props.data.allWordpressWpReference.edges.map(({ node }, index) => (
-                  <li key="{node.guid}">
-                      <Link to={'/palvelut/' + String(node.slug)}>{node.title}</Link>
-                  </li>
-                ))}
-              </ul>
-            </Container>
-        </Layout>
+                  <ReferencePreview title={node.title} slug={node.slug} excerpt={node.excerpt} />
+                ))}              
+              </div>  
 
-      )
-    }
+          </Container>
+      </Layout>
+
+    )
   }
+}
 
-  export default PageTemplate
+export default PageTemplate
 
-  export const pageQuery = graphql`
-    query($id: String!) {
-      wordpressPage(id: { eq: $id }) {
+export const pageQuery = graphql`
+  query($id: String!) {
+    wordpressPage(id: { eq: $id }) {
+      title
+      slug
+      content
+      template
+      date(formatString: "MMMM DD, YYYY")
+    }
+    allWordpressWpReference {
+      edges {
+        node {
         title
         slug
-        content
-        template
-        date(formatString: "MMMM DD, YYYY")
-      }
-      allWordpressWpReference {
-        edges {
-          node {
-          title
-          id
-          type
-          slug
-          }
+        excerpt
         }
       }
     }
-  `
+  }
+`

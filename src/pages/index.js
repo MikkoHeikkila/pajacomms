@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Container from "../components/container"
+import Layout from "../components/Layout"
+import Container from "../components/Container"
 
 export default ({ data }) => {
 

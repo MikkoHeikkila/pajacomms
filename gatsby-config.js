@@ -1,3 +1,5 @@
+const path = require(`path`)
+
 module.exports = {
     plugins: [
       `gatsby-plugin-transition-link`,
@@ -7,6 +9,42 @@ module.exports = {
           pathToConfigModule: `src/utils/typography`,
         },
       },
+
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          name: `images`,
+          path: path.join(__dirname, `src`, `images`),
+        },
+      },
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          name: `pages`,
+          path: `${__dirname}/src/pages/`,
+        },
+      },
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          name: `data`,
+          path: `${__dirname}/src/data/`,
+          ignore: [`**/\.*`], // ignore files starting with a dot
+        },
+      },
+      {
+        resolve: `gatsby-plugin-sharp`,
+        options: {
+          useMozJpeg: false,
+          stripMetadata: true,
+          defaultQuality: 75,
+        },
+      },
+
+
+      `gatsby-transformer-sharp`,
+
+      
       /*
       * Gatsby's data processing layer begins with “source”
       * plugins. Here the site sources its data from Wordpress.

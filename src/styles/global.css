@@ -325,6 +325,10 @@
       max-width: 800px;
       padding: 0 1rem; 
    }
+
+   .flex-container{
+      display: flex;
+   }
    
    /*--------- Footer ---------*/
    footer{

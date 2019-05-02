@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import Container from "../components/container"
+import Layout from "../components/Layout"
+import Container from "../components/Container"
 
 class PageTemplate extends Component {
 

@@ -1,5 +1,5 @@
 import React from "react"
-import Navigation from "../components/navigation"
+import Navigation from "./Navigation"
 
 function toggleNavigation(){
    document.getElementById("nav-button").classList.toggle("is-active");
