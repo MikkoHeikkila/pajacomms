@@ -36,10 +36,9 @@ export default ({ data }) => {
                 <h1>Kaikki referenssit:</h1>
                 
                 <ul>
-                    {data.allWordpressWpReference.edges.map(({ node }, index) => (   
-
+                    {data.allWordpressWpReference.edges.map(({ node }, index) => (
                         <li key="{node.guid}">
-                            <Link to={node.slug}>{node.title}</Link>
+                            <Link to={'/palvelut/' + String(node.slug)}>{node.title}</Link>
                         </li>
                     ))}
                 </ul>

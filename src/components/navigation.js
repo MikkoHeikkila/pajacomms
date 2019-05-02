@@ -5,11 +5,11 @@ export default () => (
     
     <nav>
         <ul>
-            <li><AniLink to="/">Etusivu (normal)</AniLink></li>
+            <li><AniLink paintDrip to="/" hex="#ed8d34">Etusivu (normal)</AniLink></li>
             <li><AniLink paintDrip to="/palvelut/" hex="#ed8d34">Palvelut (Paint)</AniLink></li>
-            <li><AniLink fade to="/ihmiset/" >Ihmiset (Fade)</AniLink></li>
-            <li><AniLink swipe direction="left" to="/meille-toihin/">Meille töihin (swipe)</AniLink></li>
-            <li><AniLink cover to="/ota-yhteytta/" bg="#ed8d34">Ota yhteyttä (cover)</AniLink></li>
+            <li><AniLink paintDrip to="/ihmiset/" hex="#ed8d34">Ihmiset (Fade)</AniLink></li>
+            <li><AniLink paintDrip to="/meille-toihin/" hex="#ed8d34">Meille töihin (swipe)</AniLink></li>
+            <li><AniLink paintDrip to="/ota-yhteytta/" hex="#ed8d34">Ota yhteyttä (cover)</AniLink></li>
         </ul>
     </nav>
 

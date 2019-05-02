@@ -21,8 +21,6 @@ class ReferenceTemplate extends Component {
   }
 }
 
-
-
 export default ReferenceTemplate
 
 export const pageQuery = graphql`

@@ -68,13 +68,24 @@ exports.createPages = async ({ graphql, actions }) => {
   const { allWordpressPage, allWordpressPost, allWordpressWpReference } = result.data
 
   // Create Page pages.
-  const defaultPageTemplate = path.resolve(`./src/templates/page.js`)
+  const defaultPageTemplate = slash(path.resolve(`./src/templates/page.js`))
 
   // We want to create a detailed page for each page node.
   // The path field contains the relative original WordPress link
   // and we use it for the slug to preserve url structure.
   // The Page ID is prefixed with 'PAGE_'
   allWordpressPage.edges.forEach(edge => {
+
+    let templateFile = ""
+
+    const tryRequire = (path) => {
+      try {
+       return true;
+      } catch (err) {
+       return false;
+      }
+    };    
+
     // Gatsby uses Redux to manage its internal state.
     // Plugins and sites can use functions like "createPage"
     // to interact with Gatsby.
@@ -84,7 +95,7 @@ exports.createPages = async ({ graphql, actions }) => {
       // optional but is often necessary so the template
       // can query data specific to each page.
       path: edge.node.slug,
-      component: slash(defaultPageTemplate),
+      component: path.resolve(`./src/templates/` + String(edge.node.slug) + `.js`),
       context: {
         id: edge.node.id,
       },
@@ -117,7 +128,7 @@ exports.createPages = async ({ graphql, actions }) => {
     // Gatsby uses Redux to manage its internal state.
     // Plugins and sites can use functions like "createPage"
     // to interact with Gatsby.
-
+    
     const path = 'palvelut/' + edge.node.slug
 
     createPage({
