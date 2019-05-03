@@ -10,41 +10,6 @@ module.exports = {
         },
       },
 
-      {
-        resolve: `gatsby-source-filesystem`,
-        options: {
-          name: `images`,
-          path: path.join(__dirname, `src`, `images`),
-        },
-      },
-      {
-        resolve: `gatsby-source-filesystem`,
-        options: {
-          name: `pages`,
-          path: `${__dirname}/src/pages/`,
-        },
-      },
-      {
-        resolve: `gatsby-source-filesystem`,
-        options: {
-          name: `data`,
-          path: `${__dirname}/src/data/`,
-          ignore: [`**/\.*`], // ignore files starting with a dot
-        },
-      },
-      {
-        resolve: `gatsby-plugin-sharp`,
-        options: {
-          useMozJpeg: false,
-          stripMetadata: true,
-          defaultQuality: 75,
-        },
-      },
-
-
-      `gatsby-transformer-sharp`,
-
-      
       /*
       * Gatsby's data processing layer begins with “source”
       * plugins. Here the site sources its data from Wordpress.
@@ -134,14 +99,19 @@ module.exports = {
             "**/reference",
             "**/menus"
           ],
+          
           // Blacklisted routes using glob patterns
-          excludedRoutes: ["**/posts/1456"],//Example
+          //excludedRoutes: ["**/posts/1456"],
+
           // use a custom normalizer which is applied after the built-in ones.
           normalizer: function({ entities }) {
             return entities
           },
         },
       },
+      "gatsby-plugin-react-helmet",    
+      "gatsby-transformer-sharp",    
+      "gatsby-plugin-sharp",
       `gatsby-transformer-remark`,   
       {      
         resolve: `gatsby-source-filesystem`,      

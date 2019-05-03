@@ -18,10 +18,10 @@ class PageTemplate extends Component {
 
               <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
               <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
-
+ 
               <div className="flex-container">
                 {this.props.data.allWordpressWpReference.edges.map(({ node }, index) => (
-                  <ReferencePreview title={node.title} slug={node.slug} excerpt={node.excerpt} />
+                  <ReferencePreview title={node.title} slug={node.slug} excerpt={node.excerpt} wpid={node.wordpress_id}/>
                 ))}              
               </div>  
 
@@ -49,6 +49,7 @@ export const pageQuery = graphql`
         title
         slug
         excerpt
+        wordpress_id
         }
       }
     }

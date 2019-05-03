@@ -14,6 +14,7 @@ class PostTemplate extends Component {
         <Layout>
             <Container>
                 <h1>{post.title}</h1>
+                <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </Container>
         </Layout>
 
@@ -27,6 +28,7 @@ export const pageQuery = graphql`
   query($id: String!) {
     wordpressPost(id: { eq: $id }) {
       title
+      content
     }
   }
 `

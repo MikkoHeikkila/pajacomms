@@ -182,7 +182,7 @@
       height: 100%;
       top: 0;
       transform: translateX(-95%);
-      background-color: #48e49b;
+      background-color: #2873ed;
       -webkit-transition: transform 0.75s cubic-bezier(.65,.05,.36,1), -webkit-transform 0.5s cubic-bezier(.25,.46,.45,.94);
       -moz-transition: transform 0.75s cubic-bezier(.65,.05,.36,1), -webkit-transform 0.5s cubic-bezier(.25,.46,.45,.94);
       -o-transition: transform 0.75s cubic-bezier(.65,.05,.36,1), -webkit-transform 0.5s cubic-bezier(.25,.46,.45,.94);

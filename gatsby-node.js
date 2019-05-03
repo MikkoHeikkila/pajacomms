@@ -20,6 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
+            wordpress_id
             path
             status
             template
@@ -31,6 +32,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
+            wordpress_id
             path
             status
             template
@@ -43,6 +45,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
+            wordpress_id           
             title
             date
             slug
@@ -140,8 +143,10 @@ exports.createPages = async ({ graphql, actions }) => {
       component: slash(defaultReferenceTemplate),
       context: {
         id: edge.node.id,
+        wordpress_id: edge.node.wordpress_id
       },
     })
+    
   })
 
 }
