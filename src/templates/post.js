@@ -10,16 +10,14 @@ class PostTemplate extends Component {
 
     const post = this.props.data.wordpressPost
 
-    const resolutions = post.featured_media.localFile.childImageSharp.resolutions
-
-    console.log(resolutions);
+    /*const resolutions = post.featured_media.localFile.childImageSharp.resolutions*/
 
     return (
 
         <Layout>
             <Container>
 
-              <Img resolutions={resolutions} />
+              {/*<Img resolutions={resolutions} />*/}
 
               <h1>{post.title}</h1>
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
