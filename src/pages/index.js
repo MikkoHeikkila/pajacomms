@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 
 import Layout from "../components/Layout"
-
+import Container from "../components/Container"
 
 export default ({ data }) => {
 
@@ -11,7 +11,7 @@ export default ({ data }) => {
     return(
 
         <Layout>
-
+            <Container>
 
                 <h1>Kaikki sivut:</h1>
                 
@@ -43,7 +43,7 @@ export default ({ data }) => {
                     ))}
                 </ul>
 
-
+            </Container>
         </Layout>
 
     ) 
