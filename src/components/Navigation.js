@@ -5,11 +5,11 @@ import { StaticQuery, graphql } from "gatsby"
 export default () => (
     
     <nav>
-
+        
         <StaticQuery
         query={graphql`
         query {
-            allWordpressWpApiMenusMenusItems{
+            allWordpressWpApiMenusMenusItems(filter: {name: {eq: "Main"}}){
                 edges{
                     node{
                         name
@@ -24,7 +24,9 @@ export default () => (
             }
         }`
         }
+
         
+
         render={data => (
 
         <ul>
@@ -33,10 +35,8 @@ export default () => (
 
             {data.allWordpressWpApiMenusMenusItems.edges.map(({ node }) => (
 
-                <li key="{node.order}">
-                    <AniLink paintDrip to="/{node.items.object_slug}/" hex="#ed8d34">{node.items.title}</AniLink>
-                </li>
-
+                <li>{node.items.title}</li>
+                
             ))}
 
         </ul>
@@ -45,5 +45,5 @@ export default () => (
         />
 
     </nav>
-
+    
 )

@@ -18,7 +18,6 @@ class ReferenceTemplate extends Component {
                 <h1>{post.title}</h1>
                 <Img
                 src={img.url}
-                fluid={img.url}
                 />
                 <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </Container>

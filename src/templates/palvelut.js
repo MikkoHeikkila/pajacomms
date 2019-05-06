@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Container from "../components/Container"
 import ReferencePreview from "../components/ReferencePreview";
+import containerStyles from "./palvelut.module.css"
 
 class PageTemplate extends Component {
 
@@ -19,7 +20,7 @@ class PageTemplate extends Component {
               <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
               <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
  
-              <div className="flex-container">
+              <div id={containerStyles.referencesContainer} className="flex-container">
                 {this.props.data.allWordpressWpReference.edges.map(({ node }, index) => (
                   <ReferencePreview title={node.title} slug={node.slug} excerpt={node.excerpt} wpid={node.wordpress_id}/>
                 ))}              
