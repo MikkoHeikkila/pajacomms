@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 export default () => (
     
-    <nav>
+    <div>
         
         <StaticQuery
         query={graphql`
@@ -25,25 +25,25 @@ export default () => (
         }`
         }
 
-        
-
         render={data => (
 
-        <ul>
+        <nav>
 
-            <li><AniLink paintDrip to="/" hex="#ed8d34">Etusivu</AniLink></li>
+        
 
             {data.allWordpressWpApiMenusMenusItems.edges.map(({ node }) => (
-
-                <li>{node.items.title}</li>
-                
+                <ul>
+                    {node.items.map((item) => {
+                        return <li key={item.wordpress_id}><AniLink paintDrip to={item.object_slug} hex="#ed8d34">{item.title}</AniLink></li>
+                    })}
+                </ul>
             ))}
 
-        </ul>
+        </nav>
         
         )}
         />
 
-    </nav>
+    </div>
     
 )
