@@ -4,76 +4,8 @@ import Layout from "../components/Layout"
 import Container from "../components/Container"
 import ReferencePreview from "../components/ReferencePreview";
 import containerStyles from "./palvelut.module.css"
-import Isotope from "isotope-layout/js/isotope";
-
-var elem = document.querySelector('.grid');
-
-// element argument can be a selector string
-//   for an individual element
-var iso = new Isotope( '.grid', {
-  // options
-  itemSelector: '.grid-item',
-  layoutMode: 'fitRows'
-});
-
 
 class PageTemplate extends Component {
-
-  constructor() {
-    super();
-    this.handleClickAll = this.handleClickAll.bind(this);
-    this.handleClickTech = this.handleClickTech.bind(this);
-    this.handleClickPersonal = this.handleClickPersonal.bind(this);
-    this.state = {
-      isClickedAll: true,
-      isClickedTech: false,
-      isClickedPersonal: false
-    };
-  }
-  
-  handleClickAll(e) {
-    this.setState({
-      isClickedAll: true,
-      isClickedTech: false,
-      isClickedPersonal: false
-    });
-    if (this.iso === undefined)
-    this.iso = new Isotope('.grid', {
-      itemSelector: '.grid-item',
-      layoutMode: "fitRows"
-    });
-    this.iso.arrange({ filter: "*" });
-  }
-
-  handleClickTech(e) {
-    
-    this.setState({
-      isClickedAll: false,
-      isClickedTech: true,
-      isClickedPersonal: false
-    });
-    if (this.iso === undefined)
-    this.iso = new Isotope('.grid', {
-      itemSelector: '.grid-item',
-      layoutMode: "fitRows"
-    });
-    this.iso.arrange({ filter: "*" });
-  }
-
-  handleClickPersonal(e) {
-    this.setState({
-      isClickedAll: false,
-      isClickedTech: false,
-      isClickedPersonal: true
-    });
-    if (this.iso === undefined)
-    this.iso = new Isotope('.grid', {
-      itemSelector: '.grid-item',
-      layoutMode: "fitRows"
-    });
-    this.iso.arrange({ filter: "*" });
-  }
-  
 
   render() {
 

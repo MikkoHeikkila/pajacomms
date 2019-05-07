@@ -95,7 +95,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Get page template filename and remove .php from the end
     const templateName = (String(edge.node.template)).slice(0, edge.node.template.length-4) 
-    // This would be the path for the custom Gatsby template
+    // This would be the path for the custom Gatsby template, if it exists
     var templatePath = path.resolve(`./src/templates/` + templateName + `.js`)
     // Check if this template exists
     if (!(fileExists(templatePath))) {
