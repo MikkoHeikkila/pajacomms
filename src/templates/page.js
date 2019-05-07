@@ -14,8 +14,7 @@ class PageTemplate extends Component {
 
         <Layout>
             <Container>
-                <h1>{(String(currentPage.template)).slice(0, currentPage.template.length-4)}</h1>
-                <p dangerouslySetInnerHTML={{ __html: currentPage.slug }} />
+                <p>Page language: {currentPage.polylang_current_lang}</p>
                 <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
                 <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
             </Container>
@@ -32,10 +31,11 @@ class PageTemplate extends Component {
     query($id: String!) {
       wordpressPage(id: { eq: $id }) {
         title
-        slug
         content
-        template
-        date(formatString: "MMMM DD, YYYY")
+        polylang_current_lang
+        polylang_translations{
+          slug
+        }
       }
     }
   `
