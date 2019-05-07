@@ -160,6 +160,11 @@
    .p-b-md{padding-bottom: 45px;}
    .p-b-lg{padding-bottom: 60px;}
    .p-b-xl{padding-bottom: 75px;}
+
+   /*------- Images -------*/
+   .gatsby-image-wrapper{
+      max-width: 100%;
+   }
    
    /* ==========================================================================
       Structure/Content
@@ -183,21 +188,37 @@
       top: 0;
       z-index: 9;
       transform: translateX(calc(-100% + 70px));
-      background-color: #2873ed;
       -webkit-transition: transform 0.75s cubic-bezier(.65,.05,.36,1), -webkit-transform 0.5s cubic-bezier(.25,.46,.45,.94);
       -moz-transition: transform 0.75s cubic-bezier(.65,.05,.36,1), -webkit-transform 0.5s cubic-bezier(.25,.46,.45,.94);
       -o-transition: transform 0.75s cubic-bezier(.65,.05,.36,1), -webkit-transform 0.5s cubic-bezier(.25,.46,.45,.94);
       transition: transform 0.75s cubic-bezier(.65,.05,.36,1), -webkit-transform 0.5s cubic-bezier(.25,.46,.45,.94);
    }
-   #sidebar--always-visible{
-      flex: 1;
-      text-align: end;
+   #sidebar--content{
+      display: flex;
+      width: calc(100% - 70px);
+      height: 100%;
+      background-color: #2873ed;
    }
-
+   #sidebar--always-visible{
+      justify-items: center;
+      align-items: start;
+      width: 70px;
+      height: 100%;
+      background-color: #2873ed;
+   }
    #sidebar.active{
       transform: translateX(0%);
    }
-   
+   @media only screen and (max-width: 992px) {
+      #sidebar--always-visible{
+         justify-items: center;
+         align-items: start;
+         width: 70px;
+         height: 58px;
+         background-color: #2873ed;
+      }
+    }
+
    /*Hamburger*/
    .hamburger {
       padding: 15px 15px;
@@ -300,10 +321,6 @@
       -webkit-flex: 1 1;
       flex: 1 1;
       margin: 0;
-      padding: 0;
-      width: 100%;
-      position: absolute;
-      height: 100%;
       align-items: center;
       justify-content: center;
    }

@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import Img from "gatsby-image"
 import Container from "../components/Container"
 
 class PostTemplate extends Component {

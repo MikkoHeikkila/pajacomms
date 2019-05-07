@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
-
 import Layout from "../components/Layout"
 import Container from "../components/Container"
 import ReferencePreview from "../components/ReferencePreview";
@@ -10,22 +9,19 @@ class PageTemplate extends Component {
 
   render() {
 
-    const currentPage = this.props.data.wordpressPage
+    const post = this.props.data.wordpressPage
 
     return (
 
       <Layout>
           <Container>
-
-              <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
-              <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
- 
+              <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+              <div dangerouslySetInnerHTML={{ __html: post.content }} />
               <div id={containerStyles.referencesContainer} className="flex-container">
-                {this.props.data.allWordpressWpReference.edges.map(({ node }, index) => (
-                  <ReferencePreview title={node.title} slug={node.slug} excerpt={node.excerpt} wpid={node.wordpress_id}/>
+                  {this.props.data.allWordpressWpReference.edges.map(({ node }, index) => (
+                  <ReferencePreview id={node.id} title={node.title} slug={node.slug} excerpt={node.excerpt} image={node.featured_media.localFile.childImageSharp.resolutions} />
                 ))}              
               </div>  
-
           </Container>
       </Layout>
 
@@ -44,13 +40,24 @@ export const pageQuery = graphql`
       template
       date(formatString: "MMMM DD, YYYY")
     }
-    allWordpressWpReference {
-      edges {
-        node {
-        title
-        slug
-        excerpt
-        wordpress_id
+    allWordpressWpReference{
+      edges{
+        node{
+          id
+          title
+          slug
+          excerpt
+          featured_media{
+            localFile{
+              childImageSharp{
+                resolutions(width:400, height:300){
+                  width
+                  height
+                  src
+                }
+              }
+            }
+          }
         }
       }
     }
