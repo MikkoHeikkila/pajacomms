@@ -4,8 +4,51 @@ import Layout from "../components/Layout"
 import Container from "../components/Container"
 import ReferencePreview from "../components/ReferencePreview";
 import containerStyles from "./palvelut.module.css"
+import Isotope from "isotope-layout/js/isotope";
+
+const iso = new Isotope( '.grid', {
+  itemSelector: '.grid-item',
+  layoutMode: 'fitRows'
+});
 
 class PageTemplate extends Component {
+
+  constructor() {
+    super();
+    this.handleClickAll = this.handleClickAll.bind(this);
+    this.handleClickTech = this.handleClickTech.bind(this);
+    this.handleClickPersonal = this.handleClickPersonal.bind(this);
+    this.state = {
+      isClickedAll: true,
+      isClickedTech: false,
+      isClickedPersonal: false
+    };
+  }
+
+  handleClickAll(e) {
+    this.setState({
+      isClickedAll: true,
+      isClickedTech: false,
+      isClickedPersonal: false
+    });
+  }
+
+  handleClickTech(e) {
+    this.setState({
+      isClickedAll: false,
+      isClickedTech: true,
+      isClickedPersonal: false
+    });
+  }
+
+  handleClickPersonal(e) {
+    this.setState({
+      isClickedAll: false,
+      isClickedTech: false,
+      isClickedPersonal: true
+    });
+  }
+  
 
   render() {
 
@@ -17,10 +60,12 @@ class PageTemplate extends Component {
           <Container>
               <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
-              <div id={containerStyles.referencesContainer} className="flex-container">
+              <div id={containerStyles.referencesContainer} className="grid">
                   {this.props.data.allWordpressWpReference.edges.map(({ node }, index) => (
-                  <ReferencePreview id={node.id} title={node.title} slug={node.slug} excerpt={node.excerpt} image={node.featured_media.localFile.childImageSharp.resolutions} />
-                ))}              
+
+                  <ReferencePreview id={node.id} categoryname={node.categories[0].name} categoryslug={node.categories[0].slug} title={node.title} slug={node.slug} excerpt={node.excerpt} image={node.featured_media.localFile.childImageSharp.resolutions} />
+                
+                  ))}              
               </div>  
           </Container>
       </Layout>
@@ -47,6 +92,10 @@ export const pageQuery = graphql`
           title
           slug
           excerpt
+          categories{
+            name
+            slug
+          }
           featured_media{
             localFile{
               childImageSharp{
