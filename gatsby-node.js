@@ -72,6 +72,20 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create Page pages.
   const defaultPageTemplate = slash(path.resolve(`./src/templates/page.js`))
+  var fs = require('fs');
+
+  // Used to check if a template exists
+  function fileExists(filePath)
+  {
+      try
+      {
+          return fs.statSync(filePath).isFile();
+      }
+      catch (err)
+      {
+          return false;
+      }
+  }
 
   // We want to create a detailed page for each page node.
   // The path field contains the relative original WordPress link
@@ -79,15 +93,14 @@ exports.createPages = async ({ graphql, actions }) => {
   // The Page ID is prefixed with 'PAGE_'
   allWordpressPage.edges.forEach(edge => {
 
-    let templateFile = ""
-
-    const tryRequire = (path) => {
-      try {
-       return true;
-      } catch (err) {
-       return false;
-      }
-    };    
+    // Get page template filename and remove .php from the end
+    const templateName = (String(edge.node.template)).slice(0, edge.node.template.length-4) 
+    // This would be the path for the custom Gatsby template
+    var templatePath = path.resolve(`./src/templates/` + templateName + `.js`)
+    // Check if this template exists
+    if (!(fileExists(templatePath))) {
+      templatePath = defaultPageTemplate; // If not, use the default template
+    }
 
     // Gatsby uses Redux to manage its internal state.
     // Plugins and sites can use functions like "createPage"
@@ -98,7 +111,7 @@ exports.createPages = async ({ graphql, actions }) => {
       // optional but is often necessary so the template
       // can query data specific to each page.
       path: edge.node.slug,
-      component: path.resolve(`./src/templates/` + String(edge.node.slug) + `.js`),
+      component: templatePath,
       context: {
         id: edge.node.id,
       },

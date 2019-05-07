@@ -6,10 +6,16 @@ import ReferencePreview from "../components/ReferencePreview";
 import containerStyles from "./palvelut.module.css"
 import Isotope from "isotope-layout/js/isotope";
 
-const iso = new Isotope( '.grid', {
+var elem = document.querySelector('.grid');
+
+// element argument can be a selector string
+//   for an individual element
+var iso = new Isotope( '.grid', {
+  // options
   itemSelector: '.grid-item',
   layoutMode: 'fitRows'
 });
+
 
 class PageTemplate extends Component {
 
@@ -24,21 +30,34 @@ class PageTemplate extends Component {
       isClickedPersonal: false
     };
   }
-
+  
   handleClickAll(e) {
     this.setState({
       isClickedAll: true,
       isClickedTech: false,
       isClickedPersonal: false
     });
+    if (this.iso === undefined)
+    this.iso = new Isotope('.grid', {
+      itemSelector: '.grid-item',
+      layoutMode: "fitRows"
+    });
+    this.iso.arrange({ filter: "*" });
   }
 
   handleClickTech(e) {
+    
     this.setState({
       isClickedAll: false,
       isClickedTech: true,
       isClickedPersonal: false
     });
+    if (this.iso === undefined)
+    this.iso = new Isotope('.grid', {
+      itemSelector: '.grid-item',
+      layoutMode: "fitRows"
+    });
+    this.iso.arrange({ filter: "*" });
   }
 
   handleClickPersonal(e) {
@@ -47,6 +66,12 @@ class PageTemplate extends Component {
       isClickedTech: false,
       isClickedPersonal: true
     });
+    if (this.iso === undefined)
+    this.iso = new Isotope('.grid', {
+      itemSelector: '.grid-item',
+      layoutMode: "fitRows"
+    });
+    this.iso.arrange({ filter: "*" });
   }
   
 
@@ -61,11 +86,13 @@ class PageTemplate extends Component {
               <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
               <div id={containerStyles.referencesContainer} className="grid">
+
                   {this.props.data.allWordpressWpReference.edges.map(({ node }, index) => (
 
-                  <ReferencePreview id={node.id} categoryname={node.categories[0].name} categoryslug={node.categories[0].slug} title={node.title} slug={node.slug} excerpt={node.excerpt} image={node.featured_media.localFile.childImageSharp.resolutions} />
+                    <ReferencePreview id={node.id} categoryname={node.categories[0].name} categoryslug={node.categories[0].slug} title={node.title} slug={node.slug} excerpt={node.excerpt} image={node.featured_media.localFile.childImageSharp.resolutions} />
                 
-                  ))}              
+                  ))}    
+
               </div>  
           </Container>
       </Layout>
@@ -99,7 +126,7 @@ export const pageQuery = graphql`
           featured_media{
             localFile{
               childImageSharp{
-                resolutions(width:400, height:300){
+                resolutions(width:400, height:200){
                   width
                   height
                   src

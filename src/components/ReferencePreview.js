@@ -7,9 +7,9 @@ export default (props) => {
 
     return(
 
-        <div className={`grid-item ${props.categoryslug}`}>
+        <div className={`grid-item ${props.categoryslug} ${containerStyles.singleReference}`}>
             <Link to={'/palvelut/' + props.slug}>
-                <p>Category name: {props.categoryname}</p>
+                <p>Kategoria: {props.categoryname}</p>
                 <Img resolutions={props.image} />
                 <p>{props.wpid}</p>
                 <h2>{props.title}</h2>
