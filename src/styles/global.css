@@ -1,8 +1,12 @@
 /* ==========================================================================
     CSS Variables
    ========================================================================== */
+   :root {
+      /*---------- Colors ----------*/
+      --primary: #395df7;
+      --highlight: #fba33a;
+    }
    
-
 /* ==========================================================================
    Bootstrap breakpoints
   // Small devices (landscape phones, 576px and up)
@@ -53,7 +57,7 @@
    
    /*---------- Links ----------*/
    a{
-   
+      background-image: none;
    }
    a:active,
    a:hover,
@@ -65,7 +69,11 @@
    img{
    
    }
-   
+   svg{
+      max-width: 100%;
+      height: auto;
+   }
+
    /*---------- Lists ----------*/
    ul,
    ol{
@@ -166,6 +174,17 @@
       max-width: 100%;
    }
    
+   /*------- Visibility -------*/
+   @media only screen and (max-width: 1200px) {
+      .hide-lg{display: none;}
+   }
+   @media only screen and (max-width: 992px) {
+      .hide-md{display: none;}
+   }
+   @media only screen and (max-width: 768px) {
+      .hide-sm{display: none;}
+   }
+
    /* ==========================================================================
       Structure/Content
       Styles that define the page structure and/or 
@@ -197,14 +216,14 @@
       display: flex;
       width: calc(100% - 70px);
       height: 100%;
-      background-color: #2873ed;
+      background-color: var(--primary);
    }
    #sidebar--always-visible{
       justify-items: center;
       align-items: start;
       width: 70px;
       height: 100%;
-      background-color: #2873ed;
+      background-color: var(--primary);
    }
    #sidebar.active{
       transform: translateX(0%);
@@ -215,7 +234,7 @@
          align-items: start;
          width: 70px;
          height: 58px;
-         background-color: #2873ed;
+         background-color: var(--primary);
       }
     }
 
@@ -244,7 +263,7 @@
    .hamburger.is-active .hamburger-inner,
    .hamburger.is-active .hamburger-inner::before,
    .hamburger.is-active .hamburger-inner::after {
-      background-color: #000; 
+      background-color: var(--highlight); 
    }
 
    .hamburger-box {
@@ -263,7 +282,7 @@
    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
       width: 40px;
       height: 4px;
-      background-color: #000;
+      background-color: var(--highlight);
       border-radius: 4px;
       position: absolute;
       transition-property: transform;
@@ -308,6 +327,30 @@
       transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); 
    }
 
+   /*Language switcher*/
+   #lang-switcher{
+      margin: 0;
+      padding: 0 15px;
+   }
+   #lang-switcher li{
+      list-style: none;
+      margin: 0;
+   }
+   #lang-switcher li a{
+      text-shadow: none;
+      color: #fff;
+   }
+
+   /*Some*/
+   #some-icons{
+      margin: 0;
+   }
+   #some-icons li{
+      width: 40px;
+      list-style: none;
+      margin: 0 auto;
+   }
+
    /*--------- Navigation ---------*/
    nav{
       display: flex;
@@ -340,6 +383,7 @@
    /*--------- Body ---------*/
    main{
       margin: 3rem auto;
+      width: 100%;
       max-width: 860px;
       padding: 0 1rem; 
    }
@@ -358,8 +402,10 @@
       Modules
       Styles that define module structure and layout.
       ========================================================================== */
-   
 
+   /* ==========================================================================
+      Animations
+      ========================================================================== */
    
    /* ==========================================================================
       Fonts

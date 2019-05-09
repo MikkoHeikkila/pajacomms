@@ -4,9 +4,10 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import Container from "../components/Container"
 
+import Superman from "../components/animations/Superman"
+
 export default ({ data }) => {
 
-    console.log(data)
 
     return(
 
@@ -14,6 +15,8 @@ export default ({ data }) => {
             <Container>
 
                 <h1>Kaikki sivut:</h1>
+
+                <Superman />
                 
                 <ul>
                     {data.allWordpressPage.edges.map(({ node }, index) => (     

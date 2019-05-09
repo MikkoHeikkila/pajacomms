@@ -25,6 +25,7 @@ exports.createPages = async ({ graphql, actions }) => {
             status
             template
             slug
+            polylang_current_lang
           }
         }
       }
@@ -72,9 +73,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create Page pages.
   const defaultPageTemplate = slash(path.resolve(`./src/templates/page.js`))
-  var fs = require('fs');
 
-  // Used to check if a template exists
+  // Checks if a template exists. Require fs (file system)
+  const fs = require('fs');
   function fileExists(filePath)
   {
       try
@@ -114,6 +115,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: templatePath,
       context: {
         id: edge.node.id,
+        lang: edge.node.polylang_current_lang
       },
     })
   })

@@ -1,33 +1,46 @@
-import React from "react"
+import React, { Component } from "react"
 import Navigation from "./Navigation"
 import { Link } from "gatsby";
+import LinkedInIcon from "../images/linkedin.svg";
 
 function toggleNavigation(){
    document.getElementById("nav-button").classList.toggle("is-active");
    document.getElementById("sidebar").classList.toggle("active");
 }
 
-export default () => (
+class Sidebar extends Component {
 
-    <aside id="sidebar">
+    render() {
 
-        <Navigation />
+        return (
 
-        <div id="sidebar--always-visible">
+            <aside id="sidebar">
 
-            <button id="nav-button" className="hamburger hamburger--spin" type="button" onClick={toggleNavigation}>
-                <span className="hamburger-box">
-                <span className="hamburger-inner"></span>
-                </span>
-            </button>
+                <Navigation />
 
-            <ul>
-                <li><Link to="">EN</Link></li>
-                <li><Link to="">FI</Link></li>
-            </ul>
+                <div id="sidebar--always-visible">
 
-        </div>
+                    <button id="nav-button" className="hamburger hamburger--spin" type="button" onClick={toggleNavigation}>
+                        <span className="hamburger-box">
+                        <span className="hamburger-inner"></span>
+                        </span>
+                    </button>
 
-    </aside>
+                    <ul id="lang-switcher" className="hide-md">
+                        <li><Link to="">EN {this.props.enSlug}</Link></li>
+                        <li><Link to="">FI {this.props.fiSlug}</Link></li>
+                    </ul>
 
-)
+                    <ul id="some-icons" className="hide-md">
+                        <li><Link to="https://www.linkedin.com/"><LinkedInIcon /></Link></li>
+                    </ul>
+
+                </div>
+
+            </aside>
+
+        )
+    }
+}
+
+export default Sidebar

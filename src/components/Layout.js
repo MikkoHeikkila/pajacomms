@@ -3,7 +3,7 @@ import Header from "./Header"
 import Sidebar from "./Sidebar"
 import Footer from "./Footer"
 
-export default ({ children }) => (
+export default ({children}) => (
 
     <div id="wrapper">
 
@@ -13,7 +13,7 @@ export default ({ children }) => (
 
             <Header />
 
-            {children}
+                {children}
 
             <Footer />
 
