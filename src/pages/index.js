@@ -3,20 +3,23 @@ import { graphql, Link } from "gatsby"
 
 import Layout from "../components/Layout"
 import Container from "../components/Container"
+import BtnPrimary from "../components/BtnPrimary"
 
 import Superman from "../components/animations/Superman"
 
 export default ({ data }) => {
 
-
     return(
 
         <Layout>
+
             <Container>
 
                 <h1>Kaikki sivut:</h1>
 
                 <Superman />
+
+                <BtnPrimary link="/palvelut/" text="Lue lisää" />
                 
                 <ul>
                     {data.allWordpressPage.edges.map(({ node }, index) => (     

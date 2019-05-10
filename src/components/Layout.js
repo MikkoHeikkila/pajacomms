@@ -22,3 +22,16 @@ export default ({children}) => (
     </div>
 
 )
+
+export const pageQuery = graphql`
+query($id: String!) {
+  wordpressPage(id: { eq: $id }) {
+    title
+    content
+    polylang_current_lang
+    polylang_translations{
+      slug
+    }
+  }
+}
+`

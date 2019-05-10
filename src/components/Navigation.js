@@ -34,7 +34,7 @@ export default () => (
                 /*
                 * This method gets the whole main menu.
                 * It would be better, but AniLink transitions don't work with dynamically created links
-                * Will fix at some point
+                * Will hopefully fix at some point
                 <ul>
                     {node.items.map((item) => {
                         return <li key={item.wordpress_id}><AniLink paintDrip to={item.object_slug} hex="#ed8d34">{item.title}</AniLink></li>
@@ -42,8 +42,8 @@ export default () => (
                 </ul> 
                 */
 
-                 /*
-                * This works. Gets front page + 4 nav items
+                /*
+                * Not as pretty, but this works. Gets front page + 4 nav items
                 */
 
                 <ul>
@@ -54,7 +54,6 @@ export default () => (
                     <li><AniLink paintDrip to="/ota-yhteytta/" hex="#ed8d34">{node.items[4].title}</AniLink></li>
                 </ul>
                 
-
             ))}
 
         </nav>

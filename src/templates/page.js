@@ -1,7 +1,9 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/Layout"
+import Header from "../components/Header"
+import Sidebar from "../components/Sidebar"
+import Footer from "../components/Footer"
 import Container from "../components/Container"
 
 class PageTemplate extends Component {
@@ -13,17 +15,19 @@ class PageTemplate extends Component {
   
       return (
 
-        <Layout enSlug={currentPage.polylang_translations[0].slug} fiSlug={currentPage.polylang_translations[1].slug}>
-            <Container>
-                <p>Current id: {context.id}</p>
-                <p>Current language: {context.lang}</p>
-                <p>Eng version: {currentPage.polylang_translations[0].slug}</p>
-                <p>Fin version: {currentPage.polylang_translations[1].slug}</p>
-                <p>Page language: {currentPage.polylang_current_lang}</p>
+        <div id="wrapper">
+          <Sidebar currentLang={context.lang} engSlug={currentPage.polylang_translations[0].slug} finSlug={currentPage.polylang_translations[1].slug} />
+          <main>
+            <Header />
+              <Container>
+
                 <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
                 <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
-            </Container>
-        </Layout>
+                
+              </Container>
+            <Footer />
+          </main>
+        </div>
 
       )
     }

@@ -1,6 +1,6 @@
 .superman{
     display: block;
-    animation: flightMotion 5s ease-in-out infinite 1.5s, arrive 1.5s ease-out;
+    animation: flightMotion 5s ease-in-out infinite 1.5s, arrive 1.5s cubic-bezier(0,0,0,1);
 }
 @keyframes flightMotion {
     0% {transform: translateY(0);}

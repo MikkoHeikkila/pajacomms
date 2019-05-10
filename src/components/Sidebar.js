@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Navigation from "./Navigation"
 import { Link } from "gatsby";
 import LinkedInIcon from "../images/linkedin.svg";
+import sidebarStyles from "./Sidebar.module.css"
 
 function toggleNavigation(){
    document.getElementById("nav-button").classList.toggle("is-active");
@@ -14,9 +15,9 @@ class Sidebar extends Component {
 
         return (
 
-            <aside id="sidebar">
+            <aside id="sidebar" class={sidebarStyles.sidebarContainer}>
 
-                <Navigation />
+                <Navigation currentLang={this.props.currentLang} />
 
                 <div id="sidebar--always-visible">
 
@@ -27,8 +28,8 @@ class Sidebar extends Component {
                     </button>
 
                     <ul id="lang-switcher" className="hide-md">
-                        <li><Link to="">EN {this.props.enSlug}</Link></li>
-                        <li><Link to="">FI {this.props.fiSlug}</Link></li>
+                        <li><Link to={this.props.engSlug}>EN</Link></li>
+                        <li><Link to={this.props.finSlug}>FI</Link></li>
                     </ul>
 
                     <ul id="some-icons" className="hide-md">
