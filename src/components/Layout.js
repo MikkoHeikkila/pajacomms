@@ -12,12 +12,12 @@ export default ({children}) => (
         <main>
 
             <Header />
-
-                {children}
+            
+            {children}
 
             <Footer />
 
-        </main>
+        </main> 
 
     </div>
 

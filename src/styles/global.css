@@ -7,7 +7,10 @@
       /*---------- Colors ----------*/
       --primary: #395df7;
       --primary-darker: #2342c6;
+
       --highlight: #fba33a;
+
+      --neutral-dark: #545454;
     }
    
 /* ==========================================================================
@@ -454,18 +457,25 @@
    main{
       margin: 3rem auto;
       width: 100%;
-      max-width: 860px;
-      padding: 0 1rem; 
+      margin: 0 0 0 70px;
    }
-
+   section{
+      margin: 5% 0;
+   }
    .flex-container{
       display: flex;
    }
    
    /*--------- Footer ---------*/
    footer{
+      background-color: var( --neutral-dark);
+      color: #fff;
       width: 100%;
       text-align: center;
+      padding: 60px 0px;
+   }
+   footer p{
+      margin: 0;
    }
    
    /* ==========================================================================
