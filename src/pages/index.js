@@ -8,6 +8,12 @@ import SectionFullWidth from "../components/SectionFullWidth";
 import SectionTxtImg from "../components/SectionTxtImg";
 import SectionImgTxt from "../components/SectionImgTxt";
 
+//Import animated images
+import SupermanContainer from "../components/animations/Superman"
+
+//Images to consts, to be passed as props to container components
+const Superman = <SupermanContainer />
+
 export default ({ data }) => {
 
     const currentPage = data.wordpressPage
@@ -17,15 +23,15 @@ export default ({ data }) => {
         <Layout>
             <Container>
 
-                <SectionTxtImg content={currentPage.content} />
+                <SectionTxtImg content={currentPage.content} imageComponent={Superman}/>
 
-                <SectionImgTxt content={currentPage.acf.rivi_2} />
+                <SectionImgTxt content={currentPage.acf.rivi_2} imageComponent={Superman}/>
 
-                <SectionFullWidth content={currentPage.acf.rivi_3} />
+                <SectionFullWidth content={currentPage.acf.rivi_3} imageComponent={Superman}/>
 
-                <SectionTxtImg content={currentPage.acf.rivi_4} />
+                <SectionTxtImg content={currentPage.acf.rivi_4} imageComponent={Superman}/>
 
-                <SectionFullWidth content={currentPage.acf.rivi_5} />
+                <SectionFullWidth content={currentPage.acf.rivi_5} imageComponent={Superman} />
 
             </Container>
         </Layout>

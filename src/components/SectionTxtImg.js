@@ -13,7 +13,7 @@ export default (props) => {
             </div>
 
             <div>
-                [Kuva tähän]
+                {props.imageComponent}
             </div>   
 
         </section>

@@ -1,6 +1,5 @@
 import React from "react"
 import BtnPrimary from "../components/BtnPrimary"
-import Superman from "../components/animations/Superman"
 
 export default (props) => {
 
@@ -8,7 +7,7 @@ export default (props) => {
     
         <section className="section--full-width">
 
-            <Superman />
+            {props.imageComponent}
 
             <div dangerouslySetInnerHTML={{ __html: props.content }} />
 

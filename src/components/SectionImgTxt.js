@@ -8,7 +8,7 @@ export default (props) => {
         <section className="section--img-txt">
 
             <div>
-                [Kuva tähän]
+                {props.imageComponent}
             </div>
 
             <div>
