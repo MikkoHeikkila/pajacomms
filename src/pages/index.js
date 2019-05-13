@@ -7,6 +7,11 @@ import BtnPrimary from "../components/BtnPrimary"
 
 import Superman from "../components/animations/Superman"
 
+import '../fonts/raisonne-regular.woff2'
+import '../fonts/raisonne-regular.woff'
+import '../fonts/raisonne-regular.eot'
+import '../fonts/raisonne-regular.ttf'
+
 export default ({ data }) => {
 
     return(

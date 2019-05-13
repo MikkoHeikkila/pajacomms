@@ -39,9 +39,14 @@
    
    /*---------- Headings ----------*/
    h1{
+      color: var(--primary);
+      font-family: 'Raisonne';
       font-size: 2.6rem;
+      font-style: normal;
+      font-weight: 500;
    }
    h2{
+      color: var(--primary);
       font-size: 2.2rem;
    }
    h3{
@@ -490,3 +495,28 @@
    /* ==========================================================================
       Fonts
       ========================================================================== */
+      /*
+      @font-face {
+         font-family: 'Raisonne';
+         font-style: normal;
+         font-weight: 500;
+         src: url('http://s2.palvelin.pro/~hungrydemo/demo/pajacommswp/wp-content/themes/twentynineteen/fonts/raisonne-regular.eot');
+         src: local('Raisonne'), local('raisonne-regular'),
+              url('http://s2.palvelin.pro/~hungrydemo/demo/pajacommswp/wp-content/themes/twentynineteen/fonts/raisonne-regular.eot?#iefix') format('embedded-opentype'),
+              url('http://s2.palvelin.pro/~hungrydemo/demo/pajacommswp/wp-content/themes/twentynineteen/fonts/raisonne-regular.woff2') format('woff2'),
+              url('http://s2.palvelin.pro/~hungrydemo/demo/pajacommswp/wp-content/themes/twentynineteen/fonts/raisonne-regular.woff') format('woff'),
+              url('http://s2.palvelin.pro/~hungrydemo/demo/pajacommswp/wp-content/themes/twentynineteen/fonts/raisonne-regular.ttf') format('truetype'),
+       }
+       */
+
+       @font-face {
+         font-family: 'Raisonne';
+         font-style: normal;
+         font-weight: 500;
+         src: url('../fonts/raisonne-regular.eot');
+         src: local('Raisonne'), local('raisonne-regular'),
+              url('../fonts/raisonne-regular.eot?#iefix') format('embedded-opentype'),
+              url('../fonts/raisonne-regular.woff2') format('woff2'),
+              url('../fonts/raisonne-regular.woff') format('woff'),
+              url('../fonts/raisonne-regular.ttf') format('truetype'),
+       }
