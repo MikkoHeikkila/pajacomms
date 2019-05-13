@@ -7,6 +7,6 @@ export default createGlobalStyle `
     font-family: "RaisonneRegular";
     font-style: normal;
     font-weight: normal;
-    src: local("RaisonneRegular"), local("RaisonneRegular"), url(${fontFiles.RufoBlackTTF}) format("truetype"), url(${fontFiles.RufoBlackWOFF}) format("woff");
+    src: local("RaisonneRegular"), local("RaisonneRegular"), url(${fontFiles.RaisonneRegularTTF}) format("truetype"), url(${fontFiles.RaisonneRegularWOFF}) format("woff");
   }
 `

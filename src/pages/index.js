@@ -6,13 +6,15 @@ import Container from "../components/Container"
 import BtnPrimary from "../components/BtnPrimary"
 
 import Superman from "../components/animations/Superman"
-import "../styles/createGlobalStyle"
+import GlobalStyles from "../styles/createGlobalStyle"
 
 export default ({ data }) => {
 
     return(
 
         <Layout>
+
+            <GlobalStyles />
 
             <Container>
 
