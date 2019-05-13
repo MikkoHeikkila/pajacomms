@@ -25,17 +25,17 @@ class BtnPrimary extends Component {
   
     render() {
         return (
-
-            <a id={s.redirectBtn} className="btn btn-primary" href={this.props.link} onClick={this.animateBtn}>
-                <div class="btn-circle-container">
-                    <div className="btn-inner-cover"></div>
-                    <div class="btn-circle">    
-                        <div></div>
+            <div>
+                <a id={s.redirectBtn} className="btn btn-primary" href={this.props.link} onClick={this.animateBtn}>
+                    <div class="btn-circle-container">
+                        <div className="btn-inner-cover"></div>
+                        <div class="btn-circle">    
+                            <div></div>
+                        </div>
                     </div>
-                </div>
-                {this.props.text}
-            </a>
-
+                    {this.props.text}
+                </a>           
+            </div>
         );
     }
 }

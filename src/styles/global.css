@@ -4,6 +4,7 @@
    :root {
       /*---------- Fonts ----------*/
       --base-font-size: 16px;
+      --font-family--headers: 'RaisonneRegular';
       /*---------- Colors ----------*/
       --primary: #395df7;
       --primary-darker: #2342c6;
@@ -40,25 +41,30 @@
    /*---------- Headings ----------*/
    h1{
       color: var(--primary);
-      font-family: 'RaisonneRegular';
+      font-family: var(--font-family--headers);
       font-size: 2.6rem;
       font-style: normal;
       font-weight: 500;
    }
    h2{
       color: var(--primary);
+      font-family: var(--font-family--headers);
       font-size: 2.2rem;
    }
    h3{
+      font-family: var(--font-family--headers);
       font-size: 1.8rem;
    }
    h4{
+      font-family: var(--font-family--headers);
       font-size: 1.2rem;
    }
    h5{
+      font-family: var(--font-family--headers);
       font-size: 1.0rem;
    }
    h6{
+      font-family: var(--font-family--headers);
       font-size: 1.0rem;
    }
    
@@ -287,6 +293,9 @@
    }
    
    /*---------- Header ----------*/
+   header{
+      padding-left: 70px;
+   }
    
    /*--------- Sidebar ---------*/
 
@@ -467,6 +476,26 @@
    section{
       margin: 5% 0;
    }
+   .section--txt-img{
+      display: flex;
+      flex-basis: 50%;
+      flex-wrap: wrap;
+   }
+   .section--txt-img div{
+      flex: 1;
+   }
+   .section--img-txt{
+      display: flex;
+      flex-basis: 50%;
+      flex-wrap: wrap;
+   }
+   .section--img-txt div{
+      flex: 1;
+   }
+   .section--full-width{
+
+   }
+
    .flex-container{
       display: flex;
    }
