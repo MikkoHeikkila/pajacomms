@@ -1,6 +1,14 @@
 import React from "react"
 import BtnPrimary from "../components/BtnPrimary"
 
+function Button(props) {
+    const showBtn = props.showBtn;
+    if (showBtn) {
+      return <BtnPrimary link="/palvelut/" text="Lue lisää" />;
+    }
+    return false;
+}
+
 export default (props) => {
 
     return(    
@@ -11,7 +19,7 @@ export default (props) => {
 
             <div dangerouslySetInnerHTML={{ __html: props.content }} />
 
-            <BtnPrimary link="/palvelut/" text="Lue lisää" />
+            <Button />
 
         </section>
 

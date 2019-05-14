@@ -27,11 +27,11 @@ export default ({ data }) => {
 
                 <SectionImgTxt content={currentPage.acf.rivi_2} imageComponent={Superman}/>
 
-                <SectionFullWidth content={currentPage.acf.rivi_3} imageComponent={Superman}/>
+                <SectionFullWidth content={currentPage.acf.rivi_3} imageComponent={Superman} showBtn={true}/>
 
                 <SectionTxtImg content={currentPage.acf.rivi_4} imageComponent={Superman}/>
 
-                <SectionFullWidth content={currentPage.acf.rivi_5} imageComponent={Superman} />
+                <SectionFullWidth content={currentPage.acf.rivi_5} imageComponent={Superman} showBtn={true} />
 
             </Container>
         </Layout>
