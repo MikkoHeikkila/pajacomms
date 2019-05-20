@@ -1,6 +1,6 @@
 import React from "react"
 import Header from "./Header"
-import Sidebar from "./Sidebar"
+import Container from "./Container/Container"
 import Footer from "./Footer"
 import GlobalStyles from "../styles/createGlobalStyle"
 
@@ -9,14 +9,16 @@ export default ({children}) => (
     <div id="wrapper">
 
         <GlobalStyles />
-
-        <Sidebar />
         
         <main>
 
             <Header />
-            
-            {children}
+
+              <Container>
+
+                {children}
+
+              </Container>
 
             <Footer />
 

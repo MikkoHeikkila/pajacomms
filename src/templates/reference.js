@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/Layout"
-import Container from "../components/Container"
 
 class ReferenceTemplate extends Component {
 
@@ -14,11 +13,9 @@ class ReferenceTemplate extends Component {
     return (
 
         <Layout>
-            <Container>
-                <Img resolutions={resolutions} />
-                <h1>{post.title}</h1>
-                <div dangerouslySetInnerHTML={{ __html: post.content }} />
-            </Container>
+          <Img resolutions={resolutions} />
+          <h1>{post.title}</h1>
+          <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </Layout>
 
     )

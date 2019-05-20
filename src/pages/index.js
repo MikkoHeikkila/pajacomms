@@ -1,9 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-
 import Layout from "../components/Layout"
-import Container from "../components/Container"
-
 import SectionFullWidth from "../components/SectionFullWidth";
 import SectionTxtImg from "../components/SectionTxtImg";
 import SectionImgTxt from "../components/SectionImgTxt";
@@ -21,19 +18,11 @@ export default ({ data }) => {
     return(
 
         <Layout>
-            <Container>
-
-                <SectionTxtImg content={currentPage.content} imageComponent={Superman}/>
-
-                <SectionImgTxt content={currentPage.acf.rivi_2} imageComponent={Superman}/>
-
-                <SectionFullWidth content={currentPage.acf.rivi_3} imageComponent={Superman} showBtn={true}/>
-
-                <SectionTxtImg content={currentPage.acf.rivi_4} imageComponent={Superman}/>
-
-                <SectionFullWidth content={currentPage.acf.rivi_5} imageComponent={Superman} showBtn={true} />
-
-            </Container>
+            <SectionTxtImg content={currentPage.content} imageComponent={Superman}/>
+            <SectionImgTxt content={currentPage.acf.rivi_2} imageComponent={Superman}/>
+            <SectionFullWidth content={currentPage.acf.rivi_3} imageComponent={Superman} showBtn={true}/>
+            <SectionTxtImg content={currentPage.acf.rivi_4} imageComponent={Superman}/>
+            <SectionFullWidth content={currentPage.acf.rivi_5} imageComponent={Superman} showBtn={true} />
         </Layout>
 
     ) 

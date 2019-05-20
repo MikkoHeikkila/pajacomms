@@ -1,37 +1,29 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 
-import Header from "../components/Header"
-import Sidebar from "../components/Sidebar"
-import Footer from "../components/Footer"
-import Container from "../components/Container"
+import Container from "../components/Container/Container"
+import Layout from "../components/Layout";
 
 class PageTemplate extends Component {
 
-    render() {
+  render() {
 
-      const currentPage = this.props.data.wordpressPage
-      const context = this.props.pageContext
-  
-      return (
+    const currentPage = this.props.data.wordpressPage
 
-        <div id="wrapper">
-          <Sidebar currentLang={context.lang} engSlug={currentPage.polylang_translations[0].slug} finSlug={currentPage.polylang_translations[1].slug} />
-          <main>
-            <Header />
-              <Container>
+    return (
 
-                <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
-                <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
-                
-              </Container>
-            <Footer />
-          </main>
-        </div>
+        <Layout>
+          <Container>
+            <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
+            <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
+          </Container>
+        </Layout>
 
-      )
-    }
+    )
+    
   }
+
+}
 
   export default PageTemplate
 

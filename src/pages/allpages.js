@@ -2,8 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 
 import Layout from "../components/Layout"
-import Container from "../components/Container"
-import BtnPrimary from "../components/BtnPrimary"
+import BtnPrimary from "../components/BtnPrimary/BtnPrimary"
 
 import Superman from "../components/animations/Superman"
 
@@ -13,45 +12,42 @@ export default ({ data }) => {
 
         <Layout>
 
-            <Container>
+            <h1>Kaikki sivut:</h1>
 
-                <h1>Kaikki sivut:</h1>
+            <Superman />
 
-                <Superman />
+            <BtnPrimary link="/palvelut/" text="Lue lisää" />
 
-                <BtnPrimary link="/palvelut/" text="Lue lisää" />
-   
-                <BtnPrimary link="/services/" text="Read more" />
-                
-                <ul>
-                    {data.allWordpressPage.edges.map(({ node }, index) => (     
-                        <li key="{node.guid}">
-                            <Link to={node.slug}>{node.title}</Link>
-                        </li>
-                    ))}
-                </ul>
+            <BtnPrimary link="/services/" text="Read more" />
+            
+            <ul>
+                {data.allWordpressPage.edges.map(({ node }, index) => (     
+                    <li key="{node.guid}">
+                        <Link to={node.slug}>{node.title}</Link>
+                    </li>
+                ))}
+            </ul>
 
-                <h1>Kaikki artikkelit:</h1>
-                
-                <ul>
-                    {data.allWordpressPost.edges.map(({ node }, index) => (     
-                        <li key="{node.guid}">
-                            <Link to={node.slug}>{node.title}</Link>
-                        </li>
-                    ))}
-                </ul>
+            <h1>Kaikki artikkelit:</h1>
+            
+            <ul>
+                {data.allWordpressPost.edges.map(({ node }, index) => (     
+                    <li key="{node.guid}">
+                        <Link to={node.slug}>{node.title}</Link>
+                    </li>
+                ))}
+            </ul>
 
-                <h1>Kaikki referenssit:</h1>
-                
-                <ul>
-                    {data.allWordpressWpReference.edges.map(({ node }, index) => (
-                        <li key="{node.guid}">
-                            <Link to={'/palvelut/' + String(node.slug)}>{node.title}</Link>
-                        </li>
-                    ))}
-                </ul>
+            <h1>Kaikki referenssit:</h1>
+            
+            <ul>
+                {data.allWordpressWpReference.edges.map(({ node }, index) => (
+                    <li key="{node.guid}">
+                        <Link to={'/palvelut/' + String(node.slug)}>{node.title}</Link>
+                    </li>
+                ))}
+            </ul>
 
-            </Container>
         </Layout>
 
     ) 

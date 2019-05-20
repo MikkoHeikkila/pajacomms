@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import Container from "../components/Container"
 
 class PostTemplate extends Component {
     
@@ -14,14 +13,9 @@ class PostTemplate extends Component {
     return (
 
         <Layout>
-            <Container>
-
-              {/*<Img resolutions={resolutions} />*/}
-
-              <h1>{post.title}</h1>
-              <div dangerouslySetInnerHTML={{ __html: post.content }} />
-
-            </Container>
+          {/*<Img resolutions={resolutions} />*/}
+          <h1>{post.title}</h1>
+          <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </Layout>
 
     )

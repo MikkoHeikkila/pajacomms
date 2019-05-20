@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Navigation from "./Navigation"
+import Navigation from "../Navigation/Navigation"
 import { Link } from "gatsby";
 import LinkedInIcon from "../images/linkedin.svg";
 import sidebarStyles from "./Sidebar.module.css"

@@ -1,10 +1,10 @@
 import React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink";
-import { StaticQuery, graphql } from "gatsby"
+//import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { StaticQuery, graphql, Link } from "gatsby"
 
 export default () => (
     
-    <div id="sidebar--content">
+    <div id="main-nav-container">
         
         <StaticQuery
         query={graphql`
@@ -47,11 +47,11 @@ export default () => (
                 */
 
                 <ul>
-                    <li><AniLink paintDrip to="/" hex="#ed8d34">{node.items[0].title}</AniLink></li>
-                    <li><AniLink paintDrip to="/palvelut/" hex="#ed8d34">{node.items[1].title}</AniLink></li>
-                    <li><AniLink paintDrip to="/ihmiset/" hex="#ed8d34">{node.items[2].title}</AniLink></li>
-                    <li><AniLink paintDrip to="/meille-toihin/" hex="#ed8d34">{node.items[3].title}</AniLink></li>
-                    <li><AniLink paintDrip to="/ota-yhteytta/" hex="#ed8d34">{node.items[4].title}</AniLink></li>
+                    <li><Link to="/">{node.items[0].title}</Link></li>
+                    <li><Link to="/palvelut/">{node.items[1].title}</Link></li>
+                    <li><Link to="/ihmiset/">{node.items[2].title}</Link></li>
+                    <li><Link to="/meille-toihin/">{node.items[3].title}</Link></li>
+                    <li><Link to="/ota-yhteytta/">{node.items[4].title}</Link></li>
                 </ul>
                 
             ))}

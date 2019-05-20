@@ -1,8 +1,7 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import Container from "../components/Container"
-import ReferencePreview from "../components/ReferencePreview";
+import ReferencePreview from "../components/ReferencePreview/ReferencePreview";
 import containerStyles from "./palvelut.module.css"
 
 class PageTemplate extends Component {
@@ -14,19 +13,13 @@ class PageTemplate extends Component {
     return (
 
       <Layout>
-          <Container>
-              <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-              <div dangerouslySetInnerHTML={{ __html: post.content }} />
-              <div id={containerStyles.referencesContainer} className="grid">
-
-                  {this.props.data.allWordpressWpReference.edges.map(({ node }, index) => (
-
-                    <ReferencePreview id={node.id} categoryname={node.categories[0].name} categoryslug={node.categories[0].slug} title={node.title} slug={node.slug} excerpt={node.excerpt} image={node.featured_media.localFile.childImageSharp.resolutions} />
-                
-                  ))}    
-
-              </div>  
-          </Container>
+        <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        <div id={containerStyles.referencesContainer} className="grid">
+          {this.props.data.allWordpressWpReference.edges.map(({ node }, index) => (
+            <ReferencePreview id={node.id} categoryname={node.categories[0].name} categoryslug={node.categories[0].slug} title={node.title} slug={node.slug} excerpt={node.excerpt} image={node.featured_media.localFile.childImageSharp.resolutions} />
+          ))}    
+        </div>  
       </Layout>
 
     )

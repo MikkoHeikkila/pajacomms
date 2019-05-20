@@ -1,5 +1,5 @@
 import React from "react"
-import BtnPrimary from "../components/BtnPrimary"
+import BtnPrimary from "../components/BtnPrimary/BtnPrimary"
 
 export default (props) => {
 

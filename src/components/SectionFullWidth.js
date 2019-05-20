@@ -1,5 +1,5 @@
 import React from "react"
-import BtnPrimary from "../components/BtnPrimary"
+import BtnPrimary from "../components/BtnPrimary/BtnPrimary"
 
 function Button(props) {
     const showBtn = props.showBtn;
@@ -10,7 +10,6 @@ function Button(props) {
 }
 
 export default (props) => {
-
     return(    
     
         <section className="section--full-width">
@@ -24,5 +23,4 @@ export default (props) => {
         </section>
 
     ) 
-
 }

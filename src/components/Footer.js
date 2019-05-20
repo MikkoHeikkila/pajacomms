@@ -18,7 +18,7 @@ export default () => (
         </address>
 
         <address>
-            <span>irsi.varkemaa@pajacomms.com</span><br/>
+            <span>kirsi.varkemaa@pajacomms.com</span><br/>
             <span>+358 50 522 2600</span><br/>
         </address>
 
