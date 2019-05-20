@@ -1,0 +1,59 @@
+.filtersButton{
+    position: relative;
+    display: inline-block;
+    text-shadow: none;
+    background-image: none;
+    padding: 7px 30px 6px 30px;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: var(--primary);
+    color: #fff;
+    transition: background-color 0.2s ease-in-out;
+    border: none;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+.filtersButton:hover,
+.filtersButton.isChecked{
+    background-color: var(--primary-darker);
+}
+.btnCircleContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0;
+}
+.btnCircle{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 5px;
+    top: 4px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    -webkit-transition: all 0.4s cubic-bezier(.59,-0.01,.42,.99); /* Safari */
+    transition: all 0.4s cubic-bezier(.59,-0.01,.42,.99);
+}
+.btnCircle>div{
+    position: absolute;
+    background-color: #fff;
+    height: 12px;
+    width: 12px;
+    border-radius: 100%;
+    top: 2px;
+    left: 2px;
+}   
+.btnOuterCircle{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 5px;
+    top: 4px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+}
+.filtersButton.isChecked .btnCircle{
+    left: initial;
+    right: 5px;
+}

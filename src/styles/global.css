@@ -4,7 +4,7 @@
    :root {
       /*---------- Fonts ----------*/
       --base-font-size: 16px;
-      --font-family--headers: 'RaisonneRegular';
+      --font-family--headers: 'RaisonneRegular', "Trebuchet MS", Helvetica, sans-serif;
       /*---------- Colors ----------*/
       --primary: #395df7;
       --primary-darker: #2342c6;
@@ -36,6 +36,8 @@
    body{
       font-size: var(--base-font-size);
       overflow-x: hidden;
+      width: 100%;
+      margin: 0;
    }
    
    /*---------- Headings ----------*/
@@ -71,11 +73,16 @@
    /*---------- Paragraphs ----------*/
    p{
       font-size: 1.0rem;
+      font-family: var(--font-family--headers);
+      font-weight: lighter;
    }
    
    /*---------- Links ----------*/
    a{
       background-image: none;
+      font-family: var(--font-family--headers);
+      font-weight: lighter;
+      text-decoration: none;
    }
    a:active,
    a:hover,
@@ -222,7 +229,6 @@
    .btn-primary:hover{
       background-color: var(--primary-darker);
    }
-
    .btn-circle-container{
       position: absolute;
       width: 100%;
@@ -264,7 +270,6 @@
    .btn-primary:hover .btn-inner-cover{
       background-color: var(--primary-darker);
    }
-
    .btn-outer-circle{
       position: absolute;
       width: 16px;
@@ -274,7 +279,6 @@
       border-radius: 100%;
       border: 1px solid #fff;
    }
-
    .btn-primary.active .btn-circle-container{
       transform: translateX(75%);
    }
@@ -300,6 +304,7 @@
       width: 100%;
       background-color: #fff;
       z-index: 999;
+      top: 0;
    }
    header h1{
       flex: 1;

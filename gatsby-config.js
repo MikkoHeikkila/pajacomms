@@ -3,12 +3,6 @@ module.exports = {
       `gatsby-plugin-transition-link`,
       `gatsby-plugin-styled-components`,
       {
-        resolve: `gatsby-plugin-typography`,
-        options: {
-          pathToConfigModule: `src/utils/typography`,
-        },
-      },
-      {
         resolve: "gatsby-plugin-react-svg",
         options: {
           rule: {

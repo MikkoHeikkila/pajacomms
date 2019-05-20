@@ -1,35 +1,39 @@
 import React, { Component } from "react"
-import s from "./BtnPrimary.module.css"
+import styles from "./BtnPrimary.module.css"
+import classNames from 'classnames'
 
 class BtnPrimary extends Component {
 
-    constructor(props) {
-        super(props);
-        this.animateBtn = this.animateBtn.bind(this);//Bind function 
+    constructor() {
+        super();
+        this.handleClick = this.handleClick.bind(this);
+        this.state = {
+          active: false
+        };
     }
 
-    animateBtn = (event) => {
-
-        event.preventDefault();
+    handleClick(e) {
+        e.preventDefault();
         const link = this.props.link;
-
-        //document.getElementById("special-btn").classList.toggle("active");
         
+        this.setState({
+            active: true
+        });
+
         setTimeout(
             function(){
                 window.location = link //Redirect
             }, 500 
         );
-
     }
   
     render() {
         return (
             <div>
-                <a id={s.redirectBtn} className="btn btn-primary" href={this.props.link} onClick={this.animateBtn}>
-                    <div class="btn-circle-container">
-                        <div className="btn-inner-cover"></div>
-                        <div class="btn-circle">    
+                <a className={this.state.active ? classNames(styles.active, styles.btnPrimary) : styles.btnPrimary} href={this.props.link} onClick={this.handleClick}>
+                    <div class={styles.btnCircleContainer}>
+                        <div className={styles.btnInnerCover}></div>
+                        <div class={styles.btnCircle}>    
                             <div></div>
                         </div>
                     </div>

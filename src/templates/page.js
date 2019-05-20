@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Container from "../components/Container/Container"
 import Layout from "../components/Layout";
+import BtnPrimary from "../components/BtnPrimary/BtnPrimary";
 
 class PageTemplate extends Component {
 
@@ -16,6 +17,7 @@ class PageTemplate extends Component {
           <Container>
             <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
             <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
+            <BtnPrimary link="/palvelut/" text="Lue lisää" />
           </Container>
         </Layout>
 

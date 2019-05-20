@@ -1,20 +1,23 @@
-.btnPrimary{
+.filtersButton{
     position: relative;
     display: inline-block;
     text-shadow: none;
     background-image: none;
-    padding: 6px 10px 3px 30px;
+    padding: 7px 30px 6px 30px;
     border-radius: 16px;
-    overflow: hidden;     
+    overflow: hidden;
     background-color: var(--primary);
     color: #fff;
-    -webkit-transition: background-color 0.2s ease-in-out; /* Safari */
     transition: background-color 0.2s ease-in-out;
- }
- .btnPrimary:hover{
+    border: none;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+.filtersButton:hover,
+.filtersButton.isChecked{
     background-color: var(--primary-darker);
- }
- .btnCircleContainer{
+}
+.btnCircleContainer{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -23,8 +26,8 @@
     transform: translateX(0%);
     -webkit-transition: transform 0.4s  cubic-bezier(.59,-0.01,.42,.99); /* Safari */
     transition: transform 0.4s  cubic-bezier(.59,-0.01,.42,.99);
- }
- .btnCircle{
+}
+.btnCircle{
     position: absolute;
     width: 16px;
     height: 16px;
@@ -32,8 +35,8 @@
     top: 4px;
     border-radius: 100%;
     border: 1px solid #fff;
- }
- .btnCircle>div{
+}
+.btnCircle>div{
     position: absolute;
     background-color: #fff;
     height: 12px;
@@ -41,21 +44,8 @@
     border-radius: 100%;
     top: 2px;
     left: 2px;
- }   
- .btnInnerCover{
-    position: absolute;
-    background-color: var(--primary);
-    height: 100%;
-    width: 100%;
-    transform: translateX(-85%);
-    top: 0;
-    -webkit-transition: background-color 0.2s ease-in-out; /* Safari */
-    transition: background-color 0.2s ease-in-out;
- }
- .btnPrimary:hover .btnInnerCover{
-    background-color: var(--primary-darker);
- }
- .btnOuterCircle{
+}   
+.btnOuterCircle{
     position: absolute;
     width: 16px;
     height: 16px;
@@ -63,10 +53,10 @@
     top: 4px;
     border-radius: 100%;
     border: 1px solid #fff;
- }
- .btnPrimary.active .btnCircleContainer{
+}
+.filtersButton.isChecked .btnCircleContainer{
     transform: translateX(75%);
- }
- .btnPrimary.active .btnInnerCover {
+}
+.filtersButton.isChecked .btnInnerCover {
     transform: translateX(-85%);
- }
+}
