@@ -6,6 +6,13 @@ import styles from "./template-references.module.css"
 import classNames from 'classnames'
 //import Isotope from "isotope-layout/js/isotope"
 
+try {
+  import Isotope from "isotope-layout/js/isotope"
+} catch (e) {
+  console.log(e)
+}
+
+
 class PageTemplate extends Component {
 
   constructor() {
