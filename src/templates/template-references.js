@@ -4,14 +4,7 @@ import Layout from "../components/Layout"
 import ReferencePreview from "../components/ReferencePreview/ReferencePreview";
 import styles from "./template-references.module.css"
 import classNames from 'classnames'
-//import Isotope from "isotope-layout/js/isotope"
-
-try {
-  import Isotope from "isotope-layout/js/isotope"
-} catch (e) {
-  console.log(e)
-}
-
+import Isotope from "isotope-layout/js/isotope"
 
 class PageTemplate extends Component {
 
