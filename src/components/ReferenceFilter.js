@@ -1,49 +1,9 @@
 import React, { Component } from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-//import ReferencePreview from "../components/ReferencePreview/ReferencePreview";
-//import styles from "./template-references.module.css"
-//import classNames from 'classnames'
-import ReferenceFilter from "../components/ReferenceFilter";
+import styles from "../templates/template-references.module.css"
+import classNames from 'classnames'
+import Isotope from "isotope-layout/js/isotope"
 
-class PageTemplate extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      displayComponent: false
-    }
-  }
-
-  componentDidMount(){
-    this.setState({
-      displayComponent: true
-    });
-  }
-
-  render() {
-
-    let displayComponent = this.state.displayComponent;
-
-    return (
-
-      <Layout>
-
-        {displayComponent && (
-          <div className="row">
-            <ReferenceFilter />
-          </div>
-        )}
-
-      </Layout>
-
-    )
-  }
-
-}
-
-/*
-class PageTemplate extends Component {
+class ReferenceFilter extends Component {
 
   constructor() {
 
@@ -179,15 +139,9 @@ class PageTemplate extends Component {
 
   render() {
 
-    const post = this.props.data.wordpressPage
-
     return (
 
-      <Layout>
-
-        <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <div>
 
         <div className={styles.filtersButtonGroup}>
 
@@ -274,66 +228,20 @@ class PageTemplate extends Component {
         </div>        
 
         <div className="grid">
-
-          {this.props.data.allWordpressWpReference.edges.map(({ node }, index) => (
-
-            <ReferencePreview
-              id={node.id} 
-              categoryname={node.categories[0].name} 
-              categoryslug={node.categories[0].slug} 
-              title={node.title} 
-              slug={node.slug} 
-              excerpt={node.excerpt} 
-              image={node.featured_media.localFile.childImageSharp.resolutions} 
-            />
-            
-          ))}    
-
+            <div className={`grid-item tech`}>
+                <div >
+                    <div className={`reference-overlay`}></div>
+                    <p>Test</p>
+                </div>
+                <p>Lue lisää</p>
+            </div> 
         </div>  
 
-      </Layout>
+      </div>
 
     )
   }
 
 }
-*/
 
-export default PageTemplate
-
-export const pageQuery = graphql`
-  query($id: String!) {
-    wordpressPage(id: { eq: $id }) {
-      title
-      slug
-      content
-      template
-      date(formatString: "MMMM DD, YYYY")
-    }
-    allWordpressWpReference{
-      edges{
-        node{
-          id
-          title
-          slug
-          excerpt
-          categories{
-            name
-            slug
-          }
-          featured_media{
-            localFile{
-              childImageSharp{
-                resolutions(width:400, height:200){
-                  width
-                  height
-                  src
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+export default ReferenceFilter

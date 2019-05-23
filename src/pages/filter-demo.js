@@ -1,10 +1,11 @@
+/*
 import React, { Component } from "react"
-import { window, document, exists } from 'browser-monads';
 import { graphql } from "gatsby"
 import ReferencePreview from "../components/ReferencePreview/ReferencePreview";
 import styles from "../templates/template-references.module.css"
 import classNames from 'classnames'
 import Isotope from "isotope-layout/js/isotope"
+
 
 class PageTemplate extends Component {
 
@@ -285,3 +286,4 @@ export const pageQuery = graphql`
     }
   }
 `
+*/
