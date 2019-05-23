@@ -3,10 +3,6 @@ import Navigation from "./Navigation/Navigation";
 
 class Header extends Component {
 
-    constructor() {
-        super();
-    }
-
     render() {
 
         return(
