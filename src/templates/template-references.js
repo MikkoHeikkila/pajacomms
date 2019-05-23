@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { window, document, exists } from 'browser-monads'
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import ReferencePreview from "../components/ReferencePreview/ReferencePreview";
@@ -28,6 +29,7 @@ class PageTemplate extends Component {
   }
 
   componentDidMount() {
+    
     if (this.iso === undefined){
         this.iso = new Isotope('.grid', {
           itemSelector: '.grid-item',
