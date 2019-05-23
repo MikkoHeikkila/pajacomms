@@ -2,3 +2,41 @@
     max-width: 280px;
     padding: 10px;
 }
+.singleReference h4{
+    color: #000;
+    margin: 15px 0px 0px 0px;
+}
+
+/*Reference previews*/
+.single-reference-preview{
+    
+}
+.imageContainer{
+    position: relative;
+    display: flex;
+}
+.imageOverlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.75;
+}
+
+.categoryName{
+    z-index: 2;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+}
+
+.readMore{
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-top: 5px;
+    font-size: 0.8rem;
+}

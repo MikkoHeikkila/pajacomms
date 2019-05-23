@@ -14,7 +14,7 @@ export default (props) => {
 
             <div>
                 {props.imageComponent}
-            </div>
+            </div>   
 
         </section>
 

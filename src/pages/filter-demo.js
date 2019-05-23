@@ -1,8 +1,7 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
 import ReferencePreview from "../components/ReferencePreview/ReferencePreview";
-import styles from "./template-references.module.css"
+import styles from "../templates/template-references.module.css"
 import classNames from 'classnames'
 import Isotope from "isotope-layout/js/isotope";
 
@@ -132,15 +131,9 @@ class PageTemplate extends Component {
 
   render() {
 
-    const post = this.props.data.wordpressPage
-
     return (
 
-      <Layout>
-
-        <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <div className={styles.testContainer}>
 
         <div className={styles.filtersButtonGroup}>
 
@@ -226,7 +219,7 @@ class PageTemplate extends Component {
 
         </div>        
 
-        <div className="grid">
+        <div className={`grid ${styles.referencesContainer}`}>
 
           {this.props.data.allWordpressWpReference.edges.map(({ node }, index) => (
 
@@ -236,7 +229,6 @@ class PageTemplate extends Component {
               categoryslug={node.categories[0].slug} 
               title={node.title} 
               slug={node.slug} 
-              excerpt={node.excerpt} 
               image={node.featured_media.localFile.childImageSharp.resolutions} 
             />
             
@@ -244,7 +236,7 @@ class PageTemplate extends Component {
 
         </div>  
 
-      </Layout>
+      </div>
 
     )
   }
@@ -254,14 +246,7 @@ class PageTemplate extends Component {
 export default PageTemplate
 
 export const pageQuery = graphql`
-  query($id: String!) {
-    wordpressPage(id: { eq: $id }) {
-      title
-      slug
-      content
-      template
-      date(formatString: "MMMM DD, YYYY")
-    }
+  query {
     allWordpressWpReference{
       edges{
         node{

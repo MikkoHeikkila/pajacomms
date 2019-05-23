@@ -1,13 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900&display=swap');
+
 /* ==========================================================================
     CSS Variables
    ========================================================================== */
    :root {
       /*---------- Fonts ----------*/
       --base-font-size: 16px;
-      --font-family--headers: 'RaisonneRegular', "Trebuchet MS", Helvetica, sans-serif;
+      --font-family--headers: 'Merriweather', serif;;
       /*---------- Colors ----------*/
-      --primary: #395df7;
-      --primary-darker: #2342c6;
+      --primary: #005D68;;
+      --primary-darker: #004650;
+
+      --secondary: #3657fb;
+
+      --tertiary: #ff5c3e;
 
       --highlight: #fba33a;
 
@@ -481,9 +487,8 @@
 
    /*--------- Body ---------*/
    main{
-      margin: 3rem auto;
       width: 100%;
-      margin: 0 0 0 0;
+      margin: 97px 0 0 0;
    }
    section{
       margin: 5% 0;
@@ -528,6 +533,18 @@
       Modules
       Styles that define module structure and layout.
       ========================================================================== */
+      .valmennukset.reference-overlay{
+         background-color: var(--primary);
+      }
+      .tyoyhteisoviestinta.reference-overlay{
+         background-color: var(--secondary);
+      }
+      .muutosviestinta.reference-overlay{
+         background-color: var(--highlight);
+      }
+      .mediaviestinta.reference-overlay{
+         background-color: var(--tertiary);
+      }  
 
    /* ==========================================================================
       Animations

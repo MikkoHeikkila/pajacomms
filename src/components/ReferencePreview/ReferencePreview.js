@@ -1,19 +1,21 @@
 import React from "react"
 import { Link } from "gatsby";
 import Img from "gatsby-image"
-import containerStyles from "./ReferencePreview.module.css"
+import styles from "./ReferencePreview.module.css"
 
 export default (props) => {
 
     return(
 
-        <div className={`grid-item tech ${props.categoryslug} ${containerStyles.singleReference}`}>
+        <div className={`grid-item tech ${props.categoryslug} ${styles.singleReference}`}>
             <Link to={'/palvelut/' + props.slug}>
-                <p>Kategoria: {props.categoryname}</p>
-                <Img resolutions={props.image} />
-                <p>{props.wpid}</p>
-                <h2>{props.title}</h2>
-                <p dangerouslySetInnerHTML={{ __html: props.excerpt }}></p>
+                <div className={styles.imageContainer}>
+                    <div className={`${props.categoryslug} reference-overlay ${styles.imageOverlay}`}></div>
+                    <Img resolutions={props.image} />
+                    <p className={styles.categoryName}>{props.categoryname}</p>
+                </div>
+                <h4>{props.title}</h4>
+                <p className={styles.readMore}>Lue lisää</p>
             </Link>
         </div> 
 

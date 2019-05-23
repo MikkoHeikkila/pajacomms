@@ -1,14 +1,30 @@
-import React from "react"
+import React, { Component } from "react"
 import Navigation from "./Navigation/Navigation";
 
-export default () => (
+class Header extends Component {
 
-    <header>
-    
-        <h1>Paja</h1>
+    constructor() {
+        super();
+        this.state = {
+            yposition: window.pageYOffset
+        };
 
-        <Navigation />
+    }
 
-    </header>
+    render() {
 
-)
+        return(
+
+            <header>
+            
+                <h1>Paja</h1>
+
+                <Navigation />
+
+            </header>
+
+        );
+    }
+}
+
+export default Header
