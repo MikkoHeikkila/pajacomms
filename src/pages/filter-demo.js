@@ -26,6 +26,15 @@ class PageTemplate extends Component {
     };
   }
 
+    componentDidMount() {
+        if (this.iso === undefined){
+            this.iso = new Isotope('.grid', {
+              itemSelector: '.grid-item',
+              layoutMode: "fitRows"
+            });      
+          }
+    }
+
   handleClickAll(e) {
 
     this.setState({
