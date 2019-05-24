@@ -1,11 +1,9 @@
-/*
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import ReferencePreview from "../components/ReferencePreview/ReferencePreview";
 import styles from "../templates/template-references.module.css"
 import classNames from 'classnames'
-import Isotope from "isotope-layout/js/isotope"
-
+import Masonry from 'react-masonry-component';
 
 class PageTemplate extends Component {
 
@@ -14,130 +12,76 @@ class PageTemplate extends Component {
     super();
 
     this.handleClickAll = this.handleClickAll.bind(this);
-    this.handleClickValmennukset = this.handleClickValmennukset.bind(this);
-    this.handleClickTyoyhteisoviestinta = this.handleClickTyoyhteisoviestinta.bind(this);
-    this.handleClickMuutosviestinta = this.handleClickMuutosviestinta.bind(this);
-    this.handleClickMediaviestinta = this.handleClickMediaviestinta.bind(this);
+    this.handleClickvalmennukset = this.handleClickvalmennukset.bind(this);
+    this.handleClicktyoyhteisoviestinta = this.handleClicktyoyhteisoviestinta.bind(this);
+    this.handleClickmuutosviestinta = this.handleClickmuutosviestinta.bind(this);
+    this.handleClickmediaviestinta = this.handleClickmediaviestinta.bind(this);
     
     this.state = {
       isClickedAll: true,
-      isClickedValmennukset: false,
-      isClickedTyoyhteisoviestinta: false,
-      isClickedMuutosviestinta: false,
-      isClickedMediaviestinta: false
+      isClickedvalmennukset: false,
+      isClickedtyoyhteisoviestinta: false,
+      isClickedmuutosviestinta: false,
+      isClickedmediaviestinta: false
     };
   }
-
-    componentDidMount() {
-        
-        if (this.iso === undefined){
-            this.iso = new Isotope('.grid', {
-              itemSelector: '.grid-item',
-              layoutMode: "fitRows"
-            });      
-          }
-    }
 
   handleClickAll(e) {
 
     this.setState({
       isClickedAll: true,
-      isClickedValmennukset: false,
-      isClickedTyoyhteisoviestinta: false,
-      isClickedMuutosviestinta: false,
-      isClickedMediaviestinta: false
+      isClickedvalmennukset: false,
+      isClickedtyoyhteisoviestinta: false,
+      isClickedmuutosviestinta: false,
+      isClickedmediaviestinta: false
     });
-
-    if (this.iso === undefined){
-      this.iso = new Isotope('.grid', {
-        itemSelector: '.grid-item',
-        layoutMode: "fitRows"
-      });      
-    }
-
-    this.iso.arrange({ filter: "*" });
 
   }
 
-  handleClickValmennukset(e) {
+  handleClickvalmennukset(e) {
 
     this.setState({
       isClickedAll: false,
-      isClickedValmennukset: true,
-      isClickedTyoyhteisoviestinta: false,
-      isClickedMuutosviestinta: false,
-      isClickedMediaviestinta: false
+      isClickedvalmennukset: true,
+      isClickedtyoyhteisoviestinta: false,
+      isClickedmuutosviestinta: false,
+      isClickedmediaviestinta: false
     });
 
-    if (this.iso === undefined){
-      this.iso = new Isotope('.grid', {
-        itemSelector: '.grid-item',
-        layoutMode: "fitRows"
-      });      
-    }
-
-
-    this.iso.arrange({ filter: `.valmennukset` });
   }
 
-  handleClickTyoyhteisoviestinta(e) {
+  handleClicktyoyhteisoviestinta(e) {
 
     this.setState({
       isClickedAll: false,
-      isClickedValmennukset: false,
-      isClickedTyoyhteisoviestinta: true,
-      isClickedMuutosviestinta: false,
-      isClickedMediaviestinta: false
+      isClickedvalmennukset: false,
+      isClickedtyoyhteisoviestinta: true,
+      isClickedmuutosviestinta: false,
+      isClickedmediaviestinta: false
     });
 
-    if (this.iso === undefined){
-      this.iso = new Isotope('.grid', {
-        itemSelector: '.grid-item',
-        layoutMode: "fitRows"
-      });      
-    }
-    this.iso.arrange({ filter: `.tyoyhteisoviestinta` });
   }
 
-  handleClickMuutosviestinta(e) {
+  handleClickmuutosviestinta(e) {
 
     this.setState({
       isClickedAll: false,
-      isClickedValmennukset: false,
-      isClickedTyoyhteisoviestinta: false,
-      isClickedMuutosviestinta: true,
-      isClickedMediaviestinta: false
+      isClickedvalmennukset: false,
+      isClickedtyoyhteisoviestinta: false,
+      isClickedmuutosviestinta: true,
+      isClickedmediaviestinta: false
     });
-
-    if (this.iso === undefined){
-      this.iso = new Isotope('.grid', {
-        itemSelector: '.grid-item',
-        layoutMode: "fitRows"
-      });      
-    }
-
-    this.iso.arrange({ filter: `.muutosviestinta` });
   }
 
-  handleClickMediaviestinta(e) {
+  handleClickmediaviestinta(e) {
 
     this.setState({
       isClickedAll: false,
-      isClickedValmennukset: false,
-      isClickedTyoyhteisoviestinta: false,
-      isClickedMuutosviestinta: false,
-      isClickedMediaviestinta: true
+      isClickedvalmennukset: false,
+      isClickedtyoyhteisoviestinta: false,
+      isClickedmuutosviestinta: false,
+      isClickedmediaviestinta: true
     });
-
-    if (this.iso === undefined){
-      this.iso = new Isotope('.grid', {
-        itemSelector: '.grid-item',
-        layoutMode: "fitRows"
-      });      
-    }
-
-
-    this.iso.arrange({ filter: `.mediaviestinta` });
   }
 
 
@@ -154,7 +98,7 @@ class PageTemplate extends Component {
             className={
               this.state.isClickedAll
                 ? classNames(styles.filtersButton, styles.isChecked)
-                : styles.filtersButton
+                : classNames(styles.filtersButton)
             }
           >
             <div className={styles.btnCircleContainer}>
@@ -166,11 +110,11 @@ class PageTemplate extends Component {
           </button>
 
           <button
-            onClick={this.handleClickValmennukset}
+            onClick={this.handleClickvalmennukset}
             className={
-              this.state.isClickedValmennukset
+              this.state.isClickedvalmennukset
                 ? classNames(styles.filtersButton, styles.isChecked)
-                : styles.filtersButton
+                : classNames(styles.filtersButton)
             }
           >
             <div className={styles.btnCircleContainer}>
@@ -182,11 +126,11 @@ class PageTemplate extends Component {
           </button>
 
           <button
-          onClick={this.handleClickTyoyhteisoviestinta}
+          onClick={this.handleClicktyoyhteisoviestinta}
           className={
-            this.state.isClickedTyoyhteisoviestinta
+            this.state.isClickedtyoyhteisoviestinta
               ? classNames(styles.filtersButton, styles.isChecked)
-              : styles.filtersButton
+              : classNames(styles.filtersButton)
             }
           >
           <div className={styles.btnCircleContainer}>
@@ -198,11 +142,11 @@ class PageTemplate extends Component {
           </button>
 
           <button
-            onClick={this.handleClickMuutosviestinta}
+            onClick={this.handleClickmuutosviestinta}
             className={
-              this.state.isClickedMuutosviestinta
+              this.state.isClickedmuutosviestinta
                 ? classNames(styles.filtersButton, styles.isChecked)
-                : styles.filtersButton
+                : classNames(styles.filtersButton)
             }
           >
           <div className={styles.btnCircleContainer}>
@@ -214,11 +158,11 @@ class PageTemplate extends Component {
           </button>
 
           <button
-          onClick={this.handleClickMediaviestinta}
+          onClick={this.handleClickmediaviestinta}
           className={
-            this.state.isClickedMediaviestinta
+            this.state.isClickedmediaviestinta
               ? classNames(styles.filtersButton, styles.isChecked)
-              : styles.filtersButton
+              : classNames(styles.filtersButton)
             }
           >
           <div className={styles.btnCircleContainer}>
@@ -231,22 +175,29 @@ class PageTemplate extends Component {
 
         </div>        
 
-        <div className={`grid ${styles.referencesContainer}`}>
+        <Masonry>
 
           {this.props.data.allWordpressWpReference.edges.map(({ node }, index) => (
 
-            <ReferencePreview
-              id={node.id} 
-              categoryname={node.categories[0].name} 
-              categoryslug={node.categories[0].slug} 
-              title={node.title} 
-              slug={node.slug} 
-              image={node.featured_media.localFile.childImageSharp.resolutions} 
-            />
+              <div className={
+                ((this.state["isClicked" + node.categories[0].slug]) || (this.state["isClickedAll"]))
+                  ? classNames(styles.singleReferenceContainer, node.categories[0].slug, styles.active,)
+                  : classNames(styles.singleReferenceContainer, node.categories[0].slug)
+                }>
+
+                <ReferencePreview
+                  id={node.id} 
+                  categoryname={node.categories[0].name} 
+                  categoryslug={node.categories[0].slug} 
+                  title={node.title} 
+                  slug={node.slug} 
+                  image={node.featured_media.localFile.childImageSharp.resolutions}
+                />            
+              </div>
             
           ))}    
 
-        </div>  
+        </Masonry>  
 
       </div>
 
@@ -286,4 +237,3 @@ export const pageQuery = graphql`
     }
   }
 `
-*/

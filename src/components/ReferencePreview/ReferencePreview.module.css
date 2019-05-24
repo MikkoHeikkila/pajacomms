@@ -8,9 +8,6 @@
 }
 
 /*Reference previews*/
-.single-reference-preview{
-    
-}
 .imageContainer{
     position: relative;
     display: flex;
@@ -38,5 +35,7 @@
     text-transform: uppercase;
     color: var(--primary);
     margin-top: 5px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
 }

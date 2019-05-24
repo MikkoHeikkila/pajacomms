@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 
 /* ==========================================================================
     CSS Variables
@@ -7,6 +8,7 @@
       /*---------- Fonts ----------*/
       --base-font-size: 16px;
       --font-family--headers: 'Merriweather', serif;;
+      --font-family: 'Roboto', sans-serif;
       /*---------- Colors ----------*/
       --primary: #005D68;;
       --primary-darker: #004650;
@@ -40,6 +42,7 @@
 
    html, 
    body{
+      font-family: var(--font-family);
       font-size: var(--base-font-size);
       overflow-x: hidden;
       width: 100%;
@@ -79,14 +82,14 @@
    /*---------- Paragraphs ----------*/
    p{
       font-size: 1.0rem;
-      font-family: var(--font-family--headers);
+      font-family: var(--font-family);
       font-weight: lighter;
    }
    
    /*---------- Links ----------*/
    a{
       background-image: none;
-      font-family: var(--font-family--headers);
+      font-family: var(--font-family);
       font-weight: lighter;
       text-decoration: none;
    }
@@ -132,7 +135,7 @@
    
    /*---------- Buttons ----------*/
    button{
-   
+      font-family: var(--font-family);
    }
    
    *:focus,*:active {
@@ -218,6 +221,7 @@
 
    /*------- Buttons -------*/
    .btn{
+      font-family: var(--font-family);
       position: relative;
       display: inline-block;
       text-shadow: none;

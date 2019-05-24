@@ -1,48 +1,11 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-//import ReferencePreview from "../components/ReferencePreview/ReferencePreview";
-//import styles from "./template-references.module.css"
-//import classNames from 'classnames'
-import ReferenceFilter from "../components/ReferenceFilter";
+import ReferencePreview from "../components/ReferencePreview/ReferencePreview";
+import styles from "./template-references.module.css"
+import classNames from 'classnames'
+import Isotope from "isotope-layout/js/isotope"
 
-class PageTemplate extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      displayComponent: false
-    }
-  }
-
-  componentDidMount(){
-    this.setState({
-      displayComponent: true
-    });
-  }
-
-  render() {
-
-    let displayComponent = this.state.displayComponent;
-
-    return (
-
-      <Layout>
-
-        {displayComponent && (
-          <div className="row">
-            <ReferenceFilter />
-          </div>
-        )}
-
-      </Layout>
-
-    )
-  }
-
-}
-
-/*
 class PageTemplate extends Component {
 
   constructor() {
@@ -297,7 +260,6 @@ class PageTemplate extends Component {
   }
 
 }
-*/
 
 export default PageTemplate
 

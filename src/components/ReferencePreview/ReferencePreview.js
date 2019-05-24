@@ -7,7 +7,7 @@ export default (props) => {
 
     return(
 
-        <div className={`grid-item tech ${props.categoryslug} ${styles.singleReference}`}>
+        <div className={`grid-item ${props.categoryslug} ${styles.singleReference}`}>
             <Link to={'/palvelut/' + props.slug}>
                 <div className={styles.imageContainer}>
                     <div className={`${props.categoryslug} reference-overlay ${styles.imageOverlay}`}></div>
