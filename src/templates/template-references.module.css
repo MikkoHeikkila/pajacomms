@@ -12,6 +12,7 @@
 
 .filtersButtonGroup{
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .filtersButton{
@@ -76,6 +77,8 @@
 
 .singleReferenceContainer{
     display: none;
+    height: 280px;
+    width: 280px;
 }
 .active{
     display: block;

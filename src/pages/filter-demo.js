@@ -5,6 +5,10 @@ import styles from "../templates/template-references.module.css"
 import classNames from 'classnames'
 import Masonry from 'react-masonry-component';
 
+const masonryOptions = {
+  columnWidth: 1
+};
+
 class PageTemplate extends Component {
 
   constructor() {
@@ -175,7 +179,10 @@ class PageTemplate extends Component {
 
         </div>        
 
-        <Masonry>
+        <Masonry
+        elementType={'div'} // default 'div'
+        options={masonryOptions} // default {}
+        >
 
           {this.props.data.allWordpressWpReference.edges.map(({ node }, index) => (
 
