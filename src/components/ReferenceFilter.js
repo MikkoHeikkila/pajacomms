@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import styles from "../templates/template-references.module.css"
 import classNames from 'classnames'
-import Isotope from "isotope-layout/js/isotope"
 
 class ReferenceFilter extends Component {
 
@@ -25,13 +24,7 @@ class ReferenceFilter extends Component {
   }
 
   componentDidMount() {
-    
-    if (this.iso === undefined){
-        this.iso = new Isotope('.grid', {
-          itemSelector: '.grid-item',
-          layoutMode: "fitRows"
-        });      
-      }
+
   }
 
   handleClickAll(e) {
@@ -44,14 +37,6 @@ class ReferenceFilter extends Component {
       isClickedMediaviestinta: false
     });
 
-    if (this.iso === undefined){
-      this.iso = new Isotope('.grid', {
-        itemSelector: '.grid-item',
-        layoutMode: "fitRows"
-      });      
-    }
-
-    this.iso.arrange({ filter: "*" });
 
   }
 
@@ -65,15 +50,6 @@ class ReferenceFilter extends Component {
       isClickedMediaviestinta: false
     });
 
-    if (this.iso === undefined){
-      this.iso = new Isotope('.grid', {
-        itemSelector: '.grid-item',
-        layoutMode: "fitRows"
-      });      
-    }
-
-
-    this.iso.arrange({ filter: `.valmennukset` });
   }
 
   handleClickTyoyhteisoviestinta(e) {
@@ -85,14 +61,6 @@ class ReferenceFilter extends Component {
       isClickedMuutosviestinta: false,
       isClickedMediaviestinta: false
     });
-
-    if (this.iso === undefined){
-      this.iso = new Isotope('.grid', {
-        itemSelector: '.grid-item',
-        layoutMode: "fitRows"
-      });      
-    }
-    this.iso.arrange({ filter: `.tyoyhteisoviestinta` });
   }
 
   handleClickMuutosviestinta(e) {
@@ -105,14 +73,6 @@ class ReferenceFilter extends Component {
       isClickedMediaviestinta: false
     });
 
-    if (this.iso === undefined){
-      this.iso = new Isotope('.grid', {
-        itemSelector: '.grid-item',
-        layoutMode: "fitRows"
-      });      
-    }
-
-    this.iso.arrange({ filter: `.muutosviestinta` });
   }
 
   handleClickMediaviestinta(e) {
@@ -125,15 +85,6 @@ class ReferenceFilter extends Component {
       isClickedMediaviestinta: true
     });
 
-    if (this.iso === undefined){
-      this.iso = new Isotope('.grid', {
-        itemSelector: '.grid-item',
-        layoutMode: "fitRows"
-      });      
-    }
-
-
-    this.iso.arrange({ filter: `.mediaviestinta` });
   }
 
 

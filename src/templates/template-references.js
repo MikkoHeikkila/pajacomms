@@ -4,7 +4,6 @@ import Layout from "../components/Layout"
 import ReferencePreview from "../components/ReferencePreview/ReferencePreview";
 import styles from "./template-references.module.css"
 import classNames from 'classnames'
-import Isotope from "isotope-layout/js/isotope"
 
 class PageTemplate extends Component {
 
@@ -28,13 +27,7 @@ class PageTemplate extends Component {
   }
 
   componentDidMount() {
-    
-    if (this.iso === undefined){
-        this.iso = new Isotope('.grid', {
-          itemSelector: '.grid-item',
-          layoutMode: "fitRows"
-        });      
-      }
+
   }
 
   handleClickAll(e) {
@@ -46,15 +39,6 @@ class PageTemplate extends Component {
       isClickedMuutosviestinta: false,
       isClickedMediaviestinta: false
     });
-
-    if (this.iso === undefined){
-      this.iso = new Isotope('.grid', {
-        itemSelector: '.grid-item',
-        layoutMode: "fitRows"
-      });      
-    }
-
-    this.iso.arrange({ filter: "*" });
 
   }
 
@@ -68,15 +52,6 @@ class PageTemplate extends Component {
       isClickedMediaviestinta: false
     });
 
-    if (this.iso === undefined){
-      this.iso = new Isotope('.grid', {
-        itemSelector: '.grid-item',
-        layoutMode: "fitRows"
-      });      
-    }
-
-
-    this.iso.arrange({ filter: `.valmennukset` });
   }
 
   handleClickTyoyhteisoviestinta(e) {
@@ -89,13 +64,6 @@ class PageTemplate extends Component {
       isClickedMediaviestinta: false
     });
 
-    if (this.iso === undefined){
-      this.iso = new Isotope('.grid', {
-        itemSelector: '.grid-item',
-        layoutMode: "fitRows"
-      });      
-    }
-    this.iso.arrange({ filter: `.tyoyhteisoviestinta` });
   }
 
   handleClickMuutosviestinta(e) {
@@ -108,14 +76,6 @@ class PageTemplate extends Component {
       isClickedMediaviestinta: false
     });
 
-    if (this.iso === undefined){
-      this.iso = new Isotope('.grid', {
-        itemSelector: '.grid-item',
-        layoutMode: "fitRows"
-      });      
-    }
-
-    this.iso.arrange({ filter: `.muutosviestinta` });
   }
 
   handleClickMediaviestinta(e) {
@@ -127,16 +87,6 @@ class PageTemplate extends Component {
       isClickedMuutosviestinta: false,
       isClickedMediaviestinta: true
     });
-
-    if (this.iso === undefined){
-      this.iso = new Isotope('.grid', {
-        itemSelector: '.grid-item',
-        layoutMode: "fitRows"
-      });      
-    }
-
-
-    this.iso.arrange({ filter: `.mediaviestinta` });
   }
 
 
