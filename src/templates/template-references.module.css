@@ -16,19 +16,20 @@
 }
 
 .filtersButton{
-    position: relative;
     display: inline-block;
-    text-shadow: none;
-    background-image: none;
-    padding: 7px 30px 6px 30px;
-    border-radius: 16px;
-    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    height: 26px;
+    padding: 1px 30px 0 30px;
+    margin: 4px;
     background-color: var(--primary);
-    color: #fff;
-    transition: background-color 0.2s ease-in-out;
+    color: #ffffff;
     border: none;
-    margin: 5px;
     cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 16px;
 }
 .filtersButton:hover,
 .filtersButton.isChecked{
@@ -42,24 +43,27 @@
     top: 0;
 }
 .btnCircle{
+    display: -webkit-flex;
+    display: flex;
     position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 5px;
-    top: 4px;
-    border-radius: 100%;
     border: 1px solid #fff;
-    -webkit-transition: all 0.4s cubic-bezier(.59,-0.01,.42,.99); /* Safari */
-    transition: all 0.4s cubic-bezier(.59,-0.01,.42,.99);
+    height: 14px;
+    width: 14px;
+    border-radius: 100%;
+    top: 5px;
+    left: 5px;
+    z-index: 3;
+    transition: left 0.2s ease-in;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
 }
 .btnCircle>div{
-    position: absolute;
     background-color: #fff;
-    height: 12px;
-    width: 12px;
+    height: 74%;
+    width: 74%;
     border-radius: 100%;
-    top: 2px;
-    left: 2px;
 }   
 .btnOuterCircle{
     position: absolute;
@@ -71,8 +75,7 @@
     border: 1px solid #fff;
 }
 .filtersButton.isChecked .btnCircle{
-    left: initial;
-    right: 5px;
+    left: calc(100% - 21px);
 }
 
 .singleReferenceContainer{

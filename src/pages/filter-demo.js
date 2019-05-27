@@ -105,10 +105,8 @@ class PageTemplate extends Component {
                 : classNames(styles.filtersButton)
             }
           >
-            <div className={styles.btnCircleContainer}>
-              <div className={styles.btnCircle}>
-                  <div></div>
-              </div>
+            <div className={styles.btnCircle}>
+              <div></div>
             </div>
             Kaikki
           </button>

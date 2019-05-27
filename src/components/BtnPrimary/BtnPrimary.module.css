@@ -1,72 +1,67 @@
 .btnPrimary{
-    position: relative;
-    display: inline-block;
-    text-shadow: none;
-    background-image: none;
-    padding: 6px 10px 3px 30px;
-    border-radius: 16px;
-    overflow: hidden;     
-    background-color: var(--primary);
-    color: #fff;
-    -webkit-transition: background-color 0.2s ease-in-out; /* Safari */
-    transition: background-color 0.2s ease-in-out;
+   display: inline-block;
+   position: relative;
+   text-decoration: none;
+   text-transform: uppercase;
+   height: 26px;
+   padding: 9px 15px 0 40px;
+   background-color: var(--primary);
+   color: #ffffff;
+   border: none;
+   cursor: pointer;
+   overflow: hidden;
+   z-index: 1;
+   border-radius: 16px;
+   font-size: 0.8rem;
  }
  .btnPrimary:hover{
     background-color: var(--primary-darker);
  }
- .btnCircleContainer{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    top: 0;
-    transform: translateX(0%);
-    -webkit-transition: transform 0.4s  cubic-bezier(.59,-0.01,.42,.99); /* Safari */
-    transition: transform 0.4s  cubic-bezier(.59,-0.01,.42,.99);
- }
  .btnCircle{
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 5px;
-    top: 4px;
-    border-radius: 100%;
-    border: 1px solid #fff;
+   display: flex;
+   position: absolute;
+   border: 1px solid #fff;
+   height: 24px;
+   width: 24px;
+   border-radius: 100%;
+   top: 4.5px;
+   left: 4.5px;
+   z-index: 3;
+   transition: left 0.2s ease-in;
+   align-items: center;
+   justify-content: center;
  }
  .btnCircle>div{
-    position: absolute;
-    background-color: #fff;
-    height: 12px;
-    width: 12px;
-    border-radius: 100%;
-    top: 2px;
-    left: 2px;
+   background-color: #fff;
+   height: 80%;
+   width: 80%;
+   border-radius: 100%;
  }   
  .btnInnerCover{
-    position: absolute;
-    background-color: var(--primary);
-    height: 100%;
-    width: 100%;
-    transform: translateX(-85%);
-    top: 0;
-    -webkit-transition: background-color 0.2s ease-in-out; /* Safari */
-    transition: background-color 0.2s ease-in-out;
+   position: absolute;
+   height: 35px;
+   width: 100%;
+   background-color: #004650;
+   left: -100%;
+   top: 0;
+   z-index: 2;
+   transition: left 0.2s ease-in;
  }
  .btnPrimary:hover .btnInnerCover{
     background-color: var(--primary-darker);
  }
- .btnOuterCircle{
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 5px;
-    top: 4px;
-    border-radius: 100%;
-    border: 1px solid #fff;
- }
+
  .btnPrimary.active .btnCircleContainer{
     transform: translateX(75%);
  }
  .btnPrimary.active .btnInnerCover {
     transform: translateX(-85%);
  }
+
+/*Active styles*/
+.btnPrimary.active .btnCircle{
+   left: calc(100% - 30px);
+}
+.btnPrimary.active .btnInnerCover{
+   left: 0;
+}

@@ -29,17 +29,13 @@ class BtnPrimary extends Component {
   
     render() {
         return (
-            <div>
-                <a className={this.state.active ? classNames(styles.active, styles.btnPrimary) : styles.btnPrimary} href={this.props.link} onClick={this.handleClick}>
-                    <div class={styles.btnCircleContainer}>
-                        <div className={styles.btnInnerCover}></div>
-                        <div class={styles.btnCircle}>    
-                            <div></div>
-                        </div>
-                    </div>
-                    {this.props.text}
-                </a>           
-            </div>
+            <a className={this.state.active ? classNames(styles.active, styles.btnPrimary) : styles.btnPrimary} href={this.props.link} onClick={this.handleClick}>
+                <div className={styles.btnInnerCover} />
+                 <div class={styles.btnCircle}>    
+                    <div />
+                </div>
+                {this.props.text}
+            </a>           
         );
     }
 }
