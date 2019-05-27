@@ -29,9 +29,8 @@ class PageTemplate extends Component {
       isClickedmediaviestinta: false
     };
   }
-
+  
   handleClickAll(e) {
-
     this.setState({
       isClickedAll: true,
       isClickedvalmennukset: false,
@@ -39,11 +38,9 @@ class PageTemplate extends Component {
       isClickedmuutosviestinta: false,
       isClickedmediaviestinta: false
     });
-
   }
 
   handleClickvalmennukset(e) {
-
     this.setState({
       isClickedAll: false,
       isClickedvalmennukset: true,
@@ -55,7 +52,6 @@ class PageTemplate extends Component {
   }
 
   handleClicktyoyhteisoviestinta(e) {
-
     this.setState({
       isClickedAll: false,
       isClickedvalmennukset: false,
@@ -67,7 +63,6 @@ class PageTemplate extends Component {
   }
 
   handleClickmuutosviestinta(e) {
-
     this.setState({
       isClickedAll: false,
       isClickedvalmennukset: false,
@@ -78,7 +73,6 @@ class PageTemplate extends Component {
   }
 
   handleClickmediaviestinta(e) {
-
     this.setState({
       isClickedAll: false,
       isClickedvalmennukset: false,

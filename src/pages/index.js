@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import SectionFullWidth from "../components/SectionFullWidth";
+//import SectionFullWidth from "../components/SectionFullWidth";
 import SectionTxtImg from "../components/SectionTxtImg";
-import SectionImgTxt from "../components/SectionImgTxt";
+//import SectionImgTxt from "../components/SectionImgTxt";
 
 //Import animated images
 import SupermanContainer from "../components/animations/Superman"

@@ -15,11 +15,7 @@ class PageTemplate extends Component {
 
     super();
 
-    this.handleClickAll = this.handleClickAll.bind(this);
-    this.handleClickvalmennukset = this.handleClickvalmennukset.bind(this);
-    this.handleClicktyoyhteisoviestinta = this.handleClicktyoyhteisoviestinta.bind(this);
-    this.handleClickmuutosviestinta = this.handleClickmuutosviestinta.bind(this);
-    this.handleClickmediaviestinta = this.handleClickmediaviestinta.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     
     this.state = {
       isClickedAll: true,
@@ -30,64 +26,16 @@ class PageTemplate extends Component {
     };
   }
 
-  handleClickAll(e) {
-
-    this.setState({
-      isClickedAll: true,
-      isClickedvalmennukset: false,
-      isClickedtyoyhteisoviestinta: false,
-      isClickedmuutosviestinta: false,
-      isClickedmediaviestinta: false
-    });
-
-  }
-
-  handleClickvalmennukset(e) {
-
-    this.setState({
-      isClickedAll: false,
-      isClickedvalmennukset: true,
-      isClickedtyoyhteisoviestinta: false,
-      isClickedmuutosviestinta: false,
-      isClickedmediaviestinta: false
-    });
-
-  }
-
-  handleClicktyoyhteisoviestinta(e) {
-
-    this.setState({
-      isClickedAll: false,
-      isClickedvalmennukset: false,
-      isClickedtyoyhteisoviestinta: true,
-      isClickedmuutosviestinta: false,
-      isClickedmediaviestinta: false
-    });
-
-  }
-
-  handleClickmuutosviestinta(e) {
-
-    this.setState({
-      isClickedAll: false,
-      isClickedvalmennukset: false,
-      isClickedtyoyhteisoviestinta: false,
-      isClickedmuutosviestinta: true,
-      isClickedmediaviestinta: false
-    });
-  }
-
-  handleClickmediaviestinta(e) {
-
+  handleClick(target){
     this.setState({
       isClickedAll: false,
       isClickedvalmennukset: false,
       isClickedtyoyhteisoviestinta: false,
       isClickedmuutosviestinta: false,
-      isClickedmediaviestinta: true
+      isClickedmediaviestinta: false
     });
+    this.setState({ [target]: true });
   }
-
 
   render() {
 
@@ -103,22 +51,24 @@ class PageTemplate extends Component {
 
           <div className={styles.filtersButtonGroup}>
 
-            <button
-              onClick={this.handleClickAll}
-              className={
-                this.state.isClickedAll
-                  ? classNames(styles.filtersButton, styles.isChecked)
-                  : classNames(styles.filtersButton)
-              }
-            >
+          <button
+          onClick={(e) => this.handleClick('isClickedAll')}
+            className={
+              this.state.isClickedAll
+                ? classNames(styles.filtersButton, styles.isChecked)
+                : classNames(styles.filtersButton)
+            }
+          >
+            <div className={styles.btnCircleContainer}>
               <div className={styles.btnCircle}>
-                <div></div>
+                  <div></div>
               </div>
-              Kaikki
-            </button>
+            </div>
+            Kaikki
+          </button>
 
             <button
-              onClick={this.handleClickvalmennukset}
+            onClick={(e) => this.handleClick('isClickedvalmennukset')}
               className={
                 this.state.isClickedvalmennukset
                   ? classNames(styles.filtersButton, styles.isChecked)
@@ -134,7 +84,7 @@ class PageTemplate extends Component {
             </button>
 
             <button
-            onClick={this.handleClicktyoyhteisoviestinta}
+            onClick={(e) => this.handleClick('isClickedtyoyhteisoviestinta')}
             className={
               this.state.isClickedtyoyhteisoviestinta
                 ? classNames(styles.filtersButton, styles.isChecked)
@@ -150,7 +100,7 @@ class PageTemplate extends Component {
             </button>
 
             <button
-              onClick={this.handleClickmuutosviestinta}
+              onClick={(e) => this.handleClick('isClickedmuutosviestinta')}
               className={
                 this.state.isClickedmuutosviestinta
                   ? classNames(styles.filtersButton, styles.isChecked)
@@ -166,7 +116,7 @@ class PageTemplate extends Component {
             </button>
 
             <button
-            onClick={this.handleClickmediaviestinta}
+            onClick={(e) => this.handleClick('isClickedmediaviestinta')}
             className={
               this.state.isClickedmediaviestinta
                 ? classNames(styles.filtersButton, styles.isChecked)
@@ -184,18 +134,15 @@ class PageTemplate extends Component {
           </div>        
 
           <Masonry
-          elementType={'div'} // default 'div'
-          options={masonryOptions} // default {}
+          elementType={'div'}
+          options={masonryOptions}
           >
-
             {this.props.data.allWordpressWpReference.edges.map(({ node }, index) => (
-
                 <div className={
                   ((this.state["isClicked" + node.categories[0].slug]) || (this.state["isClickedAll"]))
                     ? classNames(styles.singleReferenceContainer, node.categories[0].slug, styles.active,)
                     : classNames(styles.singleReferenceContainer, node.categories[0].slug)
                   }>
-
                   <ReferencePreview
                     id={node.id} 
                     categoryname={node.categories[0].name} 
@@ -205,9 +152,7 @@ class PageTemplate extends Component {
                     image={node.featured_media.localFile.childImageSharp.resolutions}
                   />            
                 </div>
-              
-            ))}    
-
+            ))}
           </Masonry>
 
       </Layout>
