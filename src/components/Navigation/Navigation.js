@@ -1,6 +1,6 @@
 import React from "react"
 //import AniLink from "gatsby-plugin-transition-link/AniLink";
-import { StaticQuery, graphql, Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 
 export default () => (
     
@@ -45,7 +45,7 @@ export default () => (
                 /*
                 * Not as pretty, but this works. Gets front page + 4 nav items
                 */
-
+                /*
                 <ul>
                     <li><Link to="/">{node.items[0].title}</Link></li>
                     <li><Link to="/palvelut/">{node.items[1].title}</Link></li>
@@ -53,7 +53,15 @@ export default () => (
                     <li><Link to="/meille-toihin/">{node.items[3].title}</Link></li>
                     <li><Link to="/ota-yhteytta/">{node.items[4].title}</Link></li>
                 </ul>
-                
+                */
+               <ul>
+                    <li><a href="/">{node.items[0].title}</a></li>
+                    <li><a href="/palvelut/">{node.items[1].title}</a></li>
+                    <li><a href="/ihmiset/">{node.items[2].title}</a></li>
+                    <li><a href="/meille-toihin/">{node.items[3].title}</a></li>
+                    <li><a href="/ota-yhteytta/">{node.items[4].title}</a></li>
+                </ul>
+
             ))}
 
         </nav>

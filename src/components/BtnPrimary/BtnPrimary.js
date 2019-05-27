@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import styles from "./BtnPrimary.module.css"
 import classNames from 'classnames'
+import { Link } from "gatsby"
 
 class BtnPrimary extends Component {
 
@@ -19,7 +20,6 @@ class BtnPrimary extends Component {
         this.setState({
             active: true
         });
-
         setTimeout(
             function(){
                 window.location = link //Redirect
@@ -29,13 +29,13 @@ class BtnPrimary extends Component {
   
     render() {
         return (
-            <a className={this.state.active ? classNames(styles.active, styles.btnPrimary) : styles.btnPrimary} href={this.props.link} onClick={this.handleClick}>
+            <Link className={this.state.active ? classNames(styles.active, styles.btnPrimary) : styles.btnPrimary} to={this.props.link} onClick={this.handleClick}>
                 <div className={styles.btnInnerCover} />
                  <div class={styles.btnCircle}>    
                     <div />
                 </div>
                 {this.props.text}
-            </a>           
+            </Link>           
         );
     }
 }

@@ -40,6 +40,10 @@
    No CSS classes or IDs here.
    ========================================================================== */
 
+   *{
+      box-sizing: border-box;
+   }
+
    html, 
    body{
       font-family: var(--font-family);
@@ -315,9 +319,14 @@
       background-color: #fff;
       z-index: 999;
       top: 0;
+      padding: 30px;
    }
    header h1{
       flex: 1;
+   }
+
+   #main-logo{
+      max-width: 150px;
    }
    
    /*--------- Sidebar ---------*/

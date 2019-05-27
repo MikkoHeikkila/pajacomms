@@ -1,5 +1,7 @@
 import React, { Component } from "react"
-import Navigation from "./Navigation/Navigation";
+import Navigation from "./Navigation/Navigation"
+
+import Logo from "../images/paja_logo.svg"
 
 class Header extends Component {
 
@@ -9,7 +11,7 @@ class Header extends Component {
 
             <header>
             
-                <h1>Paja</h1>
+                <a href="/"><Logo id="main-logo" /></a>
 
                 <Navigation />
 
