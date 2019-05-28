@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
+import { Helmet } from "react-helmet"
 //import SectionFullWidth from "../components/SectionFullWidth";
 import SectionTxtImg from "../components/SectionTxtImg";
 //import SectionImgTxt from "../components/SectionImgTxt";
@@ -19,6 +20,11 @@ export default ({ data }) => {
 
         <Layout>
             
+            <Helmet>          
+                <meta charSet="utf-8" />
+                <title>{currentPage.title} - Pajacomms</title>                 
+            </Helmet>
+
             <SectionTxtImg content={currentPage.content} imageComponent={Superman}/>
             {/** 
             <SectionImgTxt content={currentPage.acf.rivi_2} imageComponent={Superman}/>

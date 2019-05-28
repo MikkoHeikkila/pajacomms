@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 import Img from "gatsby-image"
 import Layout from "../components/Layout"
 
@@ -13,9 +14,16 @@ class ReferenceTemplate extends Component {
     return (
 
         <Layout>
+
+          <Helmet>          
+            <meta charSet="utf-8" />
+            <title>{post.title} - Pajacomms</title>                 
+          </Helmet>
+
           <Img resolutions={resolutions} />
           <h1>{post.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          
         </Layout>
 
     )

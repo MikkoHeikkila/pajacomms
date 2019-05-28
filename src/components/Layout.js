@@ -8,35 +8,22 @@ export default ({children}) => (
 
     <div id="wrapper">
 
-        <GlobalStyles />
+      <GlobalStyles />
         
-        <main>
+      <main>
 
-            <Header />
+        <Header />
 
-              <Container>
+        <Container>
 
-                {children}
+          {children}
 
-              </Container>
+        </Container>
 
-            <Footer />
+        <Footer />
 
-        </main> 
+      </main> 
 
     </div>
 
 )
-
-export const pageQuery = graphql`
-query($id: String!) {
-  wordpressPage(id: { eq: $id }) {
-    title
-    content
-    polylang_current_lang
-    polylang_translations{
-      slug
-    }
-  }
-}
-`

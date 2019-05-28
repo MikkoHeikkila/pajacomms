@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 import Layout from "../components/Layout"
 import ReferencePreview from "../components/ReferencePreview/ReferencePreview";
 import styles from "./template-references.module.css"
@@ -53,7 +54,12 @@ class PageTemplate extends Component {
 
     return (
 
-      <Layout>
+      <Layout title={post.title}>
+
+        <Helmet>          
+          <meta charSet="utf-8" />
+          <title>{post.title} - Pajacomms</title>                 
+        </Helmet>
 
         <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
 
