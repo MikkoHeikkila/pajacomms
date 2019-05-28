@@ -22,7 +22,10 @@ class PageTemplate extends Component {
       isClickedvalmennukset: false,
       isClickedtyoyhteisoviestinta: false,
       isClickedmuutosviestinta: false,
-      isClickedmediaviestinta: false
+      isClickedmediaviestinta: false,
+      isClickedsisallotjajulkaisut: false,
+      isClickedviestintapalveluna: false,
+      isClickedmediacommunication: false
     };
   }
 
@@ -32,9 +35,16 @@ class PageTemplate extends Component {
       isClickedvalmennukset: false,
       isClickedtyoyhteisoviestinta: false,
       isClickedmuutosviestinta: false,
-      isClickedmediaviestinta: false
+      isClickedmediaviestinta: false,
+      isClickedsisallotjajulkaisut: false,
+      isClickedviestintapalveluna: false,
+      isClickedmediacommunication: false
     });
     this.setState({ [target]: true });
+  }
+
+  componentDidMount(){
+
   }
 
   render() {
@@ -51,26 +61,10 @@ class PageTemplate extends Component {
 
           <div className={styles.filtersButtonGroup}>
 
-          <button
-          onClick={(e) => this.handleClick('isClickedAll')}
-            className={
-              this.state.isClickedAll
-                ? classNames(styles.filtersButton, styles.isChecked)
-                : classNames(styles.filtersButton)
-            }
-          >
-            <div className={styles.btnCircleContainer}>
-              <div className={styles.btnCircle}>
-                  <div></div>
-              </div>
-            </div>
-            Kaikki
-          </button>
-
             <button
-            onClick={(e) => this.handleClick('isClickedvalmennukset')}
+            onClick={(e) => this.handleClick('isClickedAll')}
               className={
-                this.state.isClickedvalmennukset
+                this.state.isClickedAll
                   ? classNames(styles.filtersButton, styles.isChecked)
                   : classNames(styles.filtersButton)
               }
@@ -80,58 +74,41 @@ class PageTemplate extends Component {
                     <div></div>
                 </div>
               </div>
-              Valmennukset
+              Kaikki
             </button>
 
-            <button
-            onClick={(e) => this.handleClick('isClickedtyoyhteisoviestinta')}
-            className={
-              this.state.isClickedtyoyhteisoviestinta
-                ? classNames(styles.filtersButton, styles.isChecked)
-                : classNames(styles.filtersButton)
-              }
-            >
-            <div className={styles.btnCircleContainer}>
-              <div className={styles.btnCircle}>
-                  <div></div>
-              </div>
-            </div>
-            Työyhteisöviestintä
-            </button>
-
-            <button
-              onClick={(e) => this.handleClick('isClickedmuutosviestinta')}
+            {this.props.data.allWordpressCategory.edges.map(({ node }, index) => (
+              <button
+              onClick={(e) => this.handleClick('isClicked' + node.slug)}
               className={
-                this.state.isClickedmuutosviestinta
+                this.state['isClicked' + node.slug]
                   ? classNames(styles.filtersButton, styles.isChecked)
                   : classNames(styles.filtersButton)
-              }
-            >
-            <div className={styles.btnCircleContainer}>
-              <div className={styles.btnCircle}>
-                  <div></div>
+                }
+              >
+              <div className={styles.btnCircleContainer}>
+                <div className={styles.btnCircle}>
+                    <div></div>
+                </div>
               </div>
-            </div>
-            Muutosviestinta
-            </button>
+              {node.name}
+              </button>
+            ))}
+            
+          </div>
 
-            <button
-            onClick={(e) => this.handleClick('isClickedmediaviestinta')}
-            className={
-              this.state.isClickedmediaviestinta
-                ? classNames(styles.filtersButton, styles.isChecked)
-                : classNames(styles.filtersButton)
-              }
-            >
-            <div className={styles.btnCircleContainer}>
-              <div className={styles.btnCircle}>
-                  <div></div>
-              </div>
-            </div>
-            Mediaviestintä
-            </button>
-
-          </div>        
+          <div>
+            {this.props.data.allWordpressCategory.edges.map(({ node }, index) => (
+              <div className={
+                ((this.state["isClicked" + node.slug]))
+                  ? classNames()
+                  : classNames("hidden")
+                }>
+                  <h4>{node.name}</h4>
+                  <p>{node.description}</p>
+                </div>
+            ))}          
+          </div>
 
           <Masonry
           elementType={'div'}
@@ -172,6 +149,23 @@ export const pageQuery = graphql`
       content
       template
       date(formatString: "MMMM DD, YYYY")
+    }
+    allWordpressCategory(    
+      filter: {
+        parent_element: {name: {eq: "fi"}}
+      }
+      ){
+      edges{
+        node{
+          id
+          name
+          slug
+          description
+          parent_element{
+            name
+          }
+        }
+      }
     }
     allWordpressWpReference{
       edges{

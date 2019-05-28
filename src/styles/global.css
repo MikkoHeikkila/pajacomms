@@ -200,6 +200,10 @@
        width: 100%;
        height: auto;
    }
+
+   .hidden{
+      display: none;
+   }
    
    /*------- Margins -------*/
    .m-t-xs{margin-top: 15px;}
@@ -584,7 +588,14 @@
       }
       .mediaviestinta.reference-overlay{
          background-color: var(--tertiary);
-      }  
+      }
+
+      /*Alignment*/
+      .flex-center-container{
+         display: flex;
+         align-items: center;
+         justify-content: center; 
+      }
 
    /* ==========================================================================
       Animations

@@ -11,7 +11,7 @@ export default (props) => {
                 <div dangerouslySetInnerHTML={{ __html: props.content }} />
                 <BtnPrimary link="/palvelut/" text="Lue lisää" />
             </div>
-            <div>
+            <div className="flex-center-container">
                 {props.imageComponent}
             </div>   
 
