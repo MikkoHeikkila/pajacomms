@@ -22,7 +22,9 @@ export default ({ data }) => {
             
             <Helmet>          
                 <meta charSet="utf-8" />
-                <title>{currentPage.title} - Pajacomms</title>                 
+                <title>{currentPage.title} - Pajacomms</title>
+                <link rel="canonical" href="https://practical-austin-185700.netlify.com/" />
+                <html lang={currentPage.polylang_current_lang} />
             </Helmet>
 
             <SectionTxtImg content={currentPage.content} imageComponent={Superman}/>
