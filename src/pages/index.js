@@ -6,12 +6,6 @@ import SectionFullWidth from "../components/SectionFullWidth/SectionFullWidth";
 import SectionTxtImg from "../components/SectionTxtImg/SectionTxtImg";
 import SectionImgTxt from "../components/SectionImgTxt/SectionImgTxt";
 
-import AOS from 'aos';
-import classNames from 'classnames';
-import { Watch } from 'scrollmonitor-react';
-import 'aos/dist/aos.css'
-
-
 //Import animated images
 import SupermanContainer from "../components/animations/Superman"
 import SectionHero from "../components/SectionHero/SectionHero";
@@ -39,7 +33,6 @@ export default ({ data }) => {
             <SectionFullWidth content={currentPage.acf.rivi_3} imageComponent={Superman} showBtn={true}/>
             <SectionTxtImg content={currentPage.acf.rivi_4} imageComponent={Superman}/>
             <SectionFullWidth content={currentPage.acf.rivi_5} imageComponent={Superman} showBtn={true} />
-
         </Layout>
 
     ) 
