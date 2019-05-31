@@ -1,19 +1,20 @@
 import React from "react"
-import BtnPrimary from "../components/BtnPrimary/BtnPrimary"
+import BtnPrimary from "../BtnPrimary/BtnPrimary"
 
 export default (props) => {
 
     return(    
     
-        <section className="section--txt-img">
+        <section className="section--img-txt">
+
+            <div>
+                {props.imageComponent}
+            </div>
 
             <div>
                 <div dangerouslySetInnerHTML={{ __html: props.content }} />
                 <BtnPrimary link="/palvelut/" text="Lue lisää" />
             </div>
-            <div className="flex-center-container">
-                {props.imageComponent}
-            </div>   
 
         </section>
 

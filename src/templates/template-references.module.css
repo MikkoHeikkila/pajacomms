@@ -12,7 +12,8 @@
 
 .filtersButtonGroup{
     text-align: center;
-    margin-bottom: 30px;
+    max-width: 650px;
+    margin: 60px auto;
 }
 
 .filtersButton{

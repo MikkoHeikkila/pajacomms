@@ -1,0 +1,6 @@
+.heroContainer{
+    display: -webkit-flex;
+    display: flex;
+    height: calc(100vh - 125px);
+    align-items: center;
+}

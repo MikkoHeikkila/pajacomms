@@ -1,5 +1,5 @@
 import React from "react"
-import SectionFullWidth from "../components/SectionFullWidth";
+import SectionFullWidth from "../components/SectionFullWidth/SectionFullWidth";
 
 //Import animated images
 import SupermanContainer from "../components/animations/Superman"

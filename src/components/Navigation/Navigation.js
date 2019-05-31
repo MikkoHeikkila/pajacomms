@@ -56,11 +56,11 @@ export default () => (
                 */
                
                <ul>
-                    <li><a href="/">{node.items[0].title}</a></li>
-                    <li><a href="/palvelut/">{node.items[1].title}</a></li>
-                    <li><a href="/ihmiset/">{node.items[2].title}</a></li>
-                    <li><a href="/meille-toihin/">{node.items[3].title}</a></li>
-                    <li><a href="/ota-yhteytta/">{node.items[4].title}</a></li>
+                    <li><a href="/palvelut/">{node.items[0].title}</a></li>
+                    <li><a href="/referenssit/">{node.items[1].title}</a></li>
+                    <li><a href="/tiimi/">{node.items[2].title}</a></li>
+                    <li><a href="/ota-yhteytta/">{node.items[3].title}</a></li>
+                    {/* <li><a href="/ota-yhteytta/">{node.items[4].title}</a></li> */}
                 </ul>
 
             ))}

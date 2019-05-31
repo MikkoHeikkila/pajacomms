@@ -13,6 +13,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "babel-plugin-styled-components": "^1.10.0",
     "browser-monads": "^1.0.0",
     "classnames": "^2.2.6",
@@ -37,10 +38,12 @@
     "react-masonry-component": "^6.2.1",
     "react-pose": "^4.0.8",
     "react-typography": "^0.16.19",
+    "scrollmonitor-react": "^2.4.1",
     "styled-components": "^4.2.0",
     "typography": "^0.16.19",
     "typography-theme-fairy-gates": "^0.16.19",
-    "vivus": "^0.4.4"
+    "vivus": "^0.4.4",
+    "wow.js": "^1.2.2"
   },
   "devDependencies": {
     "prettier": "^1.17.0"
