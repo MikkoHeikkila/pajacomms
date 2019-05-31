@@ -14,8 +14,6 @@ const Superman = <SupermanContainer />
 
 export default ({ data }) => {
 
-    AOS.init();
-
     const currentPage = data.wordpressPage
 
     return(
