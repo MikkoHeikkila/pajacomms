@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Navigation from "./Navigation/Navigation"
+import Container from "./Container/Container"
 
 import Logo from "../images/paja_logo.svg"
 
@@ -10,11 +11,12 @@ class Header extends Component {
         return(
 
             <header>
-            
-                <a href="/"><Logo id="main-logo" /></a>
-
-                <Navigation />
-
+                <Container>
+                    <div id="header-content">
+                        <a href="/"><Logo id="logo-header" /></a>
+                        <Navigation />
+                    </div>
+                </Container>
             </header>
 
         );

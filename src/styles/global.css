@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+/*@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 
 /* ==========================================================================
     CSS Variables
@@ -7,11 +7,12 @@
    :root {
       /*---------- Fonts ----------*/
       --base-font-size: 16px;
-      --font-family--headers: 'Merriweather', serif;;
-      --font-family: 'Roboto', sans-serif;
+      --font-family--headers: 'Merriweather', serif;
+      --font-family: 'Merriweather', serif;
       /*---------- Colors ----------*/
       --primary: #005D68;
       --primary-darker: #004650;
+      --primary-faded: #518d93;
 
       --secondary: #3657fb;
 
@@ -89,7 +90,12 @@
       font-family: var(--font-family);
       font-weight: lighter;
    }
-   
+   address{
+      font-weight: lighter;
+      font-style: normal;
+      margin: 10px 0px;
+   }
+
    /*---------- Links ----------*/
    a{
       background-image: none;
@@ -191,7 +197,10 @@
       ========================================================================== */
    
    /*---------- Colors ----------*/
-   
+   .faded{
+      color: var(--primary-faded);
+   }
+
    /*---------- Backgrounds ----------*/
    
    /*---------- Helpers ----------*/
@@ -334,8 +343,6 @@
    
    /*---------- Header ----------*/
    header{
-      display: -webkit-flex;
-      display: flex;
       position: fixed;
       width: 100%;
       background-color: #fff;
@@ -346,8 +353,12 @@
    header h1{
       flex: 1;
    }
+   #header-content{
+      display: -webkit-flex;
+      display: flex; 
+   }
 
-   #main-logo{
+   #logo-header{
       width: 100%;
       max-width: 150px;
    }
@@ -565,7 +576,7 @@
    
    /*--------- Footer ---------*/
    footer{
-      background-color: var( --neutral-dark);
+      background-color: var( --primary-darker);
       color: #fff;
       width: 100%;
       text-align: center;
@@ -573,6 +584,20 @@
    }
    footer p{
       margin: 0;
+   }
+   footer .flex-container div{
+      flex: 1;
+      text-align: left;
+      padding: 0px 0px 0px 60px;
+   }
+
+   .separator-right{
+      border-right: 1px solid var(--primary-faded);
+   }
+
+   #logo-footer{
+      width: 100%;
+      max-width: 150px;
    }
    
    /* ==========================================================================

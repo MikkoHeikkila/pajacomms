@@ -5,12 +5,14 @@ import { Helmet } from "react-helmet"
 import SectionFullWidth from "../components/SectionFullWidth/SectionFullWidth";
 import SectionTxtImg from "../components/SectionTxtImg/SectionTxtImg";
 import SectionImgTxt from "../components/SectionImgTxt/SectionImgTxt";
+import SectionHero from "../components/SectionHero/SectionHero";
 
 //Import animated images
 import SupermanContainer from "../components/animations/Superman"
-import SectionHero from "../components/SectionHero/SectionHero";
+import MuutosContainer from "../components/animations/Muutos"
 //Images to consts, to be passed as props to container components
 const Superman = <SupermanContainer />
+const Muutos = <MuutosContainer />
 
 export default ({ data }) => {
 
@@ -26,7 +28,7 @@ export default ({ data }) => {
                 <link rel="canonical" href="https://practical-austin-185700.netlify.com/" />
                 <html lang={currentPage.polylang_current_lang} />
             </Helmet>
-            <SectionHero content={currentPage.content} imageComponent={Superman} />
+            <SectionHero content={currentPage.content} imageComponent={Muutos} />
             <SectionImgTxt content={currentPage.acf.rivi_2} imageComponent={Superman}/>
             <SectionFullWidth content={currentPage.acf.rivi_3} imageComponent={Superman} showBtn={true}/>
             <SectionTxtImg content={currentPage.acf.rivi_4} imageComponent={Superman}/>
