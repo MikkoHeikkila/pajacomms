@@ -4,3 +4,9 @@
     height: calc(100vh - 125px);
     align-items: center;
 }
+.textContainer{
+    padding-right: 30px;
+}
+.imageContainer{
+    width: 100%;
+}

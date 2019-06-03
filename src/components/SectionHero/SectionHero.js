@@ -8,12 +8,12 @@ export default (props) => {
     
         <section className={styles.heroContainer}>
 
-            <div>
+            <div className={styles.textContainer}>
                 <div dangerouslySetInnerHTML={{ __html: props.content }} />
                 <BtnPrimary link="/palvelut/" text="Lue lisää" />
             </div>
 
-            <div>
+            <div className={styles.imageContainer}>
                 {props.imageComponent}
             </div>
 

@@ -1,0 +1,38 @@
+.pulaaContainer{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.pulaaContent1{
+    position: relative;
+    width: 86%;
+    padding-top: 5%;
+    z-index: 2;
+}
+.pulaaContent2{
+    position: absolute;
+    top: 22%;
+    left: 54%;
+    width: 25%;
+    height: auto;
+}
+.pulaaContent3{
+    position: absolute;
+    top: 18%;
+    right: 45%;
+    width: 9%;
+}
+.pulaaContent4{
+    position: absolute;
+    top: 0%;
+    right: 4%;
+    width: 10%;
+    transform: translate(0%,0%);
+    z-index: 3;
+    animation: rocket 2s ease-in-out;
+}
+
+@keyframes rocket {
+    0% {transform: translate(-219%,187%);}
+    100% {transform: translate(0%,0%);}
+}

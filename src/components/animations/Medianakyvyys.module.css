@@ -1,0 +1,32 @@
+.mediaContainer{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.mediaContent1{
+    position: relative;
+    width: 100%;
+    padding-top: 18%;
+}
+.mediaContent2{
+    position: absolute;
+    top: 11.1%;
+    width: 37.6%;
+    left: 23%;
+}
+.mediaContent3{
+    position: absolute;
+    top: 2%;
+    width: 16%;
+    left: 11%;
+}
+.mediaContent3 line{
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: dash 5s linear forwards;
+}
+@keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
