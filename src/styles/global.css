@@ -356,13 +356,23 @@
    }
    #header-content{
       display: -webkit-flex;
-      display: flex; 
+      display: flex;
+      align-items: end;
    }
 
    #logo-header{
-      /*width: 100%;*/
       width: 150px;
       height: auto;
+   }
+
+   @media screen and (max-width: 992px) {
+      header {
+         padding: 15px 0px;
+      }
+      #logo-header{
+         width: 120px;
+         height: auto;
+      }
    }
    
    /*--------- Sidebar ---------*/
@@ -544,6 +554,9 @@
    }
 
    /* Mobile navigation */
+   #nav-button{
+      display: none;
+   }
    #main-nav-container.active{
       display: block;
       background-color: white;
@@ -555,6 +568,9 @@
 
 
    @media screen and (max-width: 992px) {
+      #nav-button{
+         display: block;
+      }
       #header-logo-container{
          flex: 1;
       }
@@ -578,7 +594,7 @@
       margin: 124px 0 0 0;
    }
    section{
-      margin: 0 0;
+      margin: 15% 0;
    }
    .section--txt-img{
       display: flex;

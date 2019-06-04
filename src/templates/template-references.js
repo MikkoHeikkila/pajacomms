@@ -6,7 +6,6 @@ import ReferencePreview from "../components/ReferencePreview/ReferencePreview";
 import styles from "./template-references.module.css"
 import classNames from 'classnames'
 import Masonry from 'react-masonry-component';
-import RevealComponent from "../components/RevealComponent/RevealComponent";
 
 const masonryOptions = {
   columnWidth: 1
