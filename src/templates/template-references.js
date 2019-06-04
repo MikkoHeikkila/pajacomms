@@ -6,6 +6,7 @@ import ReferencePreview from "../components/ReferencePreview/ReferencePreview";
 import styles from "./template-references.module.css"
 import classNames from 'classnames'
 import Masonry from 'react-masonry-component';
+import RevealComponent from "../components/RevealComponent/RevealComponent";
 
 const masonryOptions = {
   columnWidth: 1
@@ -102,20 +103,20 @@ class PageTemplate extends Component {
             ))}
             
           </div>
-
-          <div>
+        
+          <div className={styles.categoryContainer}>
             {this.props.data.allWordpressCategory.edges.map(({ node }, index) => (
               <div className={
                 ((this.state["isClicked" + node.slug]))
-                  ? classNames()
-                  : classNames("hidden")
+                  ? classNames(styles.categoryContent, styles.active)
+                  : classNames(styles.categoryContent, styles.hidden)
                 }>
                   <h4>{node.name}</h4>
                   <p>{node.description}</p>
-                </div>
-            ))}          
-          </div>
-
+              </div>
+            ))}   
+          </div>          
+        
           <Masonry
           elementType={'div'}
           options={masonryOptions}

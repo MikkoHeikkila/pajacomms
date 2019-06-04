@@ -21,6 +21,7 @@ class ReferenceTemplate extends Component {
           </Helmet>
 
           <Img resolutions={resolutions} />
+          
           <h1>{post.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
           

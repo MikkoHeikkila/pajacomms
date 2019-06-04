@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AOS from 'aos';
 import { Watch } from 'scrollmonitor-react';
 import 'aos/dist/aos.css'
@@ -10,6 +10,7 @@ const ViewStyle = props => (
 );
 
 export default Watch(
+
     class RevealComponent extends React.Component {
 
     componentDidMount() {

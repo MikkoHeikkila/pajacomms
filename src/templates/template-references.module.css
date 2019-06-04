@@ -87,3 +87,29 @@
 .active{
     display: block;
 }
+
+.categoryContainer{
+    margin-bottom: 50px;
+}
+
+.categoryContent{
+    height: 0;
+    opacity: 0;    
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.categoryContent.active{
+    height: auto;
+    opacity: 1;
+}
+
+.categoryContent > h4,
+.categoryContent > p{
+    display: none;
+}
+.categoryContent.active > h4,
+.categoryContent.active > p{
+    display: block;
+}

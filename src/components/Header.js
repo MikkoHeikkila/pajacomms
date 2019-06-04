@@ -3,6 +3,7 @@ import Navigation from "./Navigation/Navigation"
 import Container from "./Container/Container"
 
 import Logo from "../images/paja_logo.svg"
+import Hamburger from "./Hamburger/Hamburger";
 
 class Header extends Component {
 
@@ -13,8 +14,9 @@ class Header extends Component {
             <header>
                 <Container>
                     <div id="header-content">
-                        <a href="/"><Logo id="logo-header" /></a>
+                        <a id="header-logo-container" href="/"><Logo id="logo-header" /></a>
                         <Navigation />
+                        <Hamburger />
                     </div>
                 </Container>
             </header>

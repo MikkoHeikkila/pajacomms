@@ -27,7 +27,8 @@ class PageTemplate extends Component {
 
             <div class="flex-container">
                 {currentPage.acf.people.map(person => (
-                    <Person 
+                    <Person
+                        image={person.kuva.localFile.childImageSharp.resolutions}
                         name={person.nimi} 
                         title={person.titteli} 
                         description={person.vapaa_tekstikentta}
@@ -51,18 +52,29 @@ export default PageTemplate
 
 export const pageQuery = graphql`
     query($id: String!) {
-        wordpressPage(id: { eq: $id }) {
-            title
-            content
-            acf{
-                people{
-                    nimi
-                    titteli
-                    vapaa_tekstikentta
-                    puhelinnumero
-                    sahkoposti
+      wordpressPage(id: { eq: $id }) {
+        title
+        content
+        acf{
+          people{
+            nimi
+            titteli
+            vapaa_tekstikentta
+            puhelinnumero
+            sahkoposti
+            kuva {
+              localFile {
+                childImageSharp{
+                  resolutions(width:300, height:300){
+                    width
+                    height
+                    src
+                  }
                 }
+              }
             }
+          }
         }
+      }
     }
 `

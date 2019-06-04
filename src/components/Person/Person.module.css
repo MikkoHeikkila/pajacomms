@@ -1,6 +1,6 @@
 .person{
     flex: 1;
-    border: 1px solid black;
     margin: 5px;
     padding: 7px 15px;
+    text-align: center;
 }
