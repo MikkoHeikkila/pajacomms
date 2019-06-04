@@ -6,7 +6,6 @@ import SectionFullWidth from "../components/SectionFullWidth/SectionFullWidth";
 import SectionTxtImg from "../components/SectionTxtImg/SectionTxtImg";
 import SectionImgTxt from "../components/SectionImgTxt/SectionImgTxt";
 import SectionHero from "../components/SectionHero/SectionHero";
-import TextComponent from "../components/TextComponent/TextComponent";
 
 //Import animated images
 import SupermanContainer from "../components/animations/Superman"
@@ -37,10 +36,9 @@ export default ({ data }) => {
                 <html lang={currentPage.polylang_current_lang} />
             </Helmet>
 
-            <SectionHero content={currentPage.content} imageComponent={Muutos} aos="fade-up" />
+            <SectionHero content={currentPage.content} imageComponent={Muutos} />
             <SectionImgTxt content={currentPage.acf.rivi_2} imageComponent={Pulaa}/>
             <SectionFullWidth content={currentPage.acf.rivi_3} imageComponent={Puuttuuko} showBtn={true}/>
-            <TextComponent><h3>Reveal</h3></TextComponent>
             <SectionTxtImg content={currentPage.acf.rivi_4} imageComponent={Medianakyvyys}/>
             <SectionFullWidth content={currentPage.acf.rivi_5} imageComponent={Superman} showBtn={true} />
 

@@ -1,11 +1,14 @@
 .heroContainer{
     display: -webkit-flex;
     display: flex;
-    height: calc(100vh - 125px);
+    height: calc(100vh + 125px);
     align-items: center;
 }
 .textContainer{
     padding-right: 30px;
+}
+.textContainer h1{
+    max-width: 250px;
 }
 .imageContainer{
     width: 100%;

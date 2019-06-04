@@ -60,7 +60,7 @@
       font-family: var(--font-family--headers);
       font-size: 2.6rem;
       font-style: normal;
-      font-weight: 500;
+      font-weight: 600;
    }
    h2{
       color: var(--primary);
@@ -87,6 +87,7 @@
    /*---------- Paragraphs ----------*/
    p{
       font-size: 1.0rem;
+      line-height: 1.4rem;
       font-family: var(--font-family);
       font-weight: lighter;
    }
@@ -544,10 +545,10 @@
    /*--------- Body ---------*/
    main{
       width: 100%;
-      margin: 97px 0 0 0;
+      margin: 0 0 0 0;
    }
    section{
-      margin: 5% 0;
+      margin: 0 0;
    }
    .section--txt-img{
       display: flex;
