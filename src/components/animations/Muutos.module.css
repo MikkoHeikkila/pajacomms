@@ -9,8 +9,8 @@
     animation-duration: 35000ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear; 
-    -webkit-transform-origin: 49.5% 52%;
-    transform-origin: 49.5% 52%;
+    -webkit-transform-origin: 48.45% 50%;
+    transform-origin: 48.45% 50%;
 }
 .muutosContent2{
     position: absolute;
@@ -20,12 +20,47 @@
     left: 49%;
     transform: translateX(-50%);
 }
-  
+
+.maapallo{
+    position: absolute;
+    top: 44.6%;
+    width: 12.1%;
+    z-index: 9;
+    left: 43.9%;
+    animation-name: spinreverse;
+    animation-duration: 65000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    -webkit-transform-origin: 49.8% 46.5%;
+    transform-origin: 49.8% 46.5%;
+}
+.nuoli{
+    position: absolute;
+    top: 41.5%;
+    z-index: 9;
+    width: 16.5%;
+    left: 41.5%;
+    animation-name: spin;
+    animation-duration: 65000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    -webkit-transform-origin: 50% 49%;
+    transform-origin: 50% 49%;
+}
+
 @keyframes spin {
     from {
         transform:rotate(0deg);
     }
     to {
         transform:rotate(360deg);
+    }
+}
+@keyframes spinreverse {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(-360deg);
     }
 }

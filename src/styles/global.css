@@ -549,7 +549,7 @@
    nav ul li a{
       color: #000;
       text-shadow: none;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       background-image: none;
 
    }
@@ -635,10 +635,32 @@
       margin: 0;
    }
    footer .flex-container div{
-      flex: 1;
       text-align: left;
       padding: 0px 0px 0px 30px;
    }
+
+   .footer-content-container{
+      display: flex;
+   }
+   .footer-content-container>div:nth-child(1){
+      flex: 3;
+   }
+   .footer-content-container>div:nth-child(2){
+      flex: 9;
+   }
+   .footer-content-container>div:nth-child(3){
+      flex: 1;
+   }
+
+   .footer-address-container{
+      display: block;
+      text-align: left;
+   }
+   .footer-address-container div{
+      display: inline-block;
+      padding: 0px 30px;
+   }
+
 
    .separator-right{
       border-right: 1px solid var(--primary-faded);

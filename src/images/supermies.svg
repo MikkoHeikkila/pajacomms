@@ -3,14 +3,15 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 595.28 160" style="enable-background:new 0 0 595.28 160;" xml:space="preserve">
 <style type="text/css">
-	.superman0{fill:#FFDC8B;}
-	.superman1{fill:#324FFF;}
+	.superman0{fill:#fdd6d0;}
+	.superman1{fill:#50c8f0;}
 	.superman2{fill:#005D68;}
 	.superman3{fill:#FF5C3E;}
 	.superman4{fill:#26757F;}
-	.superman5{fill:#00FF7D;}
+	.superman5{fill:#50c8f0;}
 	.superman6{clip-path:url(#SVGID_2_);fill:#FF5C3E;}
 	.superman7{fill:#545454;}
+	.superman9{fill:#395df7;}
 	.superman8{fill:none;stroke:#FFA500; stroke-width:3; stroke-linecap:round; stroke-dasharray: 45; animation: dash 15s linear infinite;}
 	@keyframes dash {to {stroke-dashoffset: -1000;}}
 </style>
@@ -25,7 +26,7 @@
 	<path class="superman3" d="M130.28,75.42v-34.1h-9.54C120.74,41.32,123.74,70.8,130.28,75.42L130.28,75.42z"/>
 	<path class="superman4" d="M227.24,72.12c0,0,85.04,6.34,88.5,7.34s-10,17.24-10,17.24s3,2.11-22,3.11c-25,1-62.76,6-65,0
 		S227.24,72.12,227.24,72.12L227.24,72.12z"/>
-	<path class="superman5" d="M304.74,97.8c0,0,10.61-16.79,10.61-18c0-1.21,2.39,1.21,4.39,0c2-1.21-9.5,18-11,18
+	<path class="superman9" d="M304.74,97.8c0,0,10.61-16.79,10.61-18c0-1.21,2.39,1.21,4.39,0c2-1.21-9.5,18-11,18
 		C307.74,97.8,304.74,97.8,304.74,97.8L304.74,97.8z"/>
 	<g>
 		<defs>
@@ -49,9 +50,9 @@
 	<path class="superman7" d="M106.74,34.8c0,0-13-7-6-10c7-3,10-6,15-3c5,3,4.16-1.24,9.35,4.88c5.19,6.12,11.65,15.12,6.65,15.12
 		s-6,2.51-6-0.49s0.35-7.51-2-5.51c-2.35,2-1,2-2,4c-1,2-2-5.38-2-7c0-1.62-2-3-7-2C106.41,32.07,106.74,34.8,106.74,34.8
 		L106.74,34.8z"/>
-	<path class="superman1" d="M195.74,138.8c0,0-9-12-2-24c7-12,11-29,17-32s24-7.89,26,3c2,10.89-15,32.69-16,35.69
+	<path class="superman2" d="M195.74,138.8c0,0-9-12-2-24c7-12,11-29,17-32s24-7.89,26,3c2,10.89-15,32.69-16,35.69
 		C219.74,124.5,213.99,148.8,195.74,138.8L195.74,138.8z"/>
-	<path class="superman5" d="M195.74,138.8c0,0,7.5,6,18.25,4c10.75-2,11.02-15.47,9.75-18c-3-6-4-2-4-2S214.74,145.47,195.74,138.8
+	<path class="superman9" d="M195.74,138.8c0,0,7.5,6,18.25,4c10.75-2,11.02-15.47,9.75-18c-3-6-4-2-4-2S214.74,145.47,195.74,138.8
 		L195.74,138.8z"/>
 	<path class="superman3" d="M220.74,121.5c0,0,5-13.69,46-8.69c6,1-1.77-2.93,0.67-6c14.33-1,42.33,0,47.33,0c5,0,8,0.71-16,6.86
 		c-24,6.14-86,31.14-87,29.57C211.74,139.8,222.74,136.45,220.74,121.5L220.74,121.5z"/>

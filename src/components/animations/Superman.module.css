@@ -3,6 +3,17 @@
     /*animation: flightMotion 5s ease-in-out infinite 1.5s, arrive 1.5s cubic-bezier(0,0,0,1);*/
     animation: flightMotion 5s ease-in-out infinite;
 }
+
+.superman8{
+    fill:none;stroke:#FFA500; 
+    stroke-width:3; 
+    stroke-linecap:round; 
+    stroke-dasharray: 45; 
+    animation: dash 15s 
+    linear infinite;
+}
+@keyframes dash {to {stroke-dashoffset: -1000;}}
+
 @keyframes flightMotion {
     0% {transform: translateY(0);}
     50% {transform: translateY(10px);}
