@@ -29,7 +29,7 @@ export default ({ data }) => {
 
         <Layout>
             
-            <Helmet>          
+            <Helmet>
                 <meta charSet="utf-8" />
                 <title>{currentPage.title} - Pajacomms</title>
                 <link rel="canonical" href="https://practical-austin-185700.netlify.com/" />
@@ -37,36 +37,35 @@ export default ({ data }) => {
             </Helmet>
 
             <SectionHero 
-                content={currentPage.content} 
+                content={currentPage.content}
                 imageComponent={Muutos}
             />
 
             <SectionImgTxt 
-                content={currentPage.acf.rivi_2} 
+                content={currentPage.acf.rivi_2}
                 imageComponent={Pulaa}
             />
 
             <SectionFullWidth 
-                content={currentPage.acf.rivi_3} 
+                content={currentPage.acf.rivi_3}
                 imageComponent={Puuttuuko}
                 showBtn={true}
             />
 
             <SectionTxtImg 
-                content={currentPage.acf.rivi_4} 
+                content={currentPage.acf.rivi_4}
                 imageComponent={Medianakyvyys}
             />
 
             <SectionFullWidth 
-                content={currentPage.acf.rivi_5} 
+                content={currentPage.acf.rivi_5}
                 imageComponent={Superman}
                 showBtn={true}
             />
 
         </Layout>
 
-    ) 
-
+    )
 }
 
 export const pageQuery = graphql`

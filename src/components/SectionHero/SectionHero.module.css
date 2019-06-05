@@ -4,7 +4,8 @@
     align-items: center;
 }
 .textContainer{
-    padding-right: 30px;
+    max-width: 415px;
+    width: 100%;
 }
 .textContainer h1{
     max-width: 250px;

@@ -1,0 +1,11 @@
+.sectionTxtImg{
+    display: flex;
+    flex-basis: 50%;
+    flex-wrap: wrap;
+}
+ .sectionTxtImg div{
+    flex: 1;
+}
+.txtContainer{
+    max-width: 375px;
+}

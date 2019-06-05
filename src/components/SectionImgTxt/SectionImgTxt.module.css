@@ -1,0 +1,8 @@
+.txtContainer{
+    text-align: right;
+    max-width: 350px;
+}
+.txtContainer h2{
+    max-width: 275px;
+    margin: 0px 0px 30px auto;    
+}

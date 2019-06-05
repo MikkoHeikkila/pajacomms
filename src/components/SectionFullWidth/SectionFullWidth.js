@@ -1,6 +1,7 @@
 import React from "react"
 import BtnPrimary from "../BtnPrimary/BtnPrimary"
 import RevealComponent from "../RevealComponent/RevealComponent";
+import styles from "./SectionFullWidth.module.css";
 
 function Button(props) {
     const showBtn = props.showBtn;
@@ -13,12 +14,12 @@ function Button(props) {
 export default (props) => {
     return(    
         
-        <section className="section--full-width">
+        <section className={styles.sectionFullWidth}>
             <RevealComponent aos="fade-up">
-                <div>{props.imageComponent}</div>
+                <div className={styles.imageContainer}>{props.imageComponent}</div>
             </RevealComponent>
             <RevealComponent aos="fade-up">
-                <div dangerouslySetInnerHTML={{ __html: props.content }} />
+                <div className={styles.txtContainer} dangerouslySetInnerHTML={{ __html: props.content }} />
                 <Button />
             </RevealComponent>
         </section>

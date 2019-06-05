@@ -9,6 +9,7 @@
       --base-font-size: 16px;
       --font-family--headers: 'Merriweather', serif;
       --font-family: 'Merriweather', serif;
+      --font-margin--bottom: 30px;
       /*---------- Colors ----------*/
       --primary: #005D68;
       --primary-darker: #004650;
@@ -61,27 +62,33 @@
       font-size: 2.6rem;
       font-style: normal;
       font-weight: 600;
+      margin-bottom: var(--font-margin--bottom);
    }
    h2{
       color: var(--primary);
       font-family: var(--font-family--headers);
       font-size: 2.2rem;
+      margin-bottom: var(--font-margin--bottom);
    }
    h3{
       font-family: var(--font-family--headers);
       font-size: 1.8rem;
+      margin-bottom: var(--font-margin--bottom);
    }
    h4{
       font-family: var(--font-family--headers);
       font-size: 1.2rem;
+      margin-bottom: var(--font-margin--bottom);
    }
    h5{
       font-family: var(--font-family--headers);
       font-size: 1.0rem;
+      margin-bottom: var(--font-margin--bottom);
    }
    h6{
       font-family: var(--font-family--headers);
       font-size: 1.0rem;
+      margin-bottom: var(--font-margin--bottom);
    }
    
    /*---------- Paragraphs ----------*/
@@ -90,6 +97,7 @@
       line-height: 1.4rem;
       font-family: var(--font-family);
       font-weight: lighter;
+      margin-bottom: var(--font-margin--bottom);
    }
    address{
       font-weight: lighter;
@@ -213,6 +221,10 @@
 
    .hidden{
       display: none;
+   }
+
+   .text-right{
+      text-align: right;
    }
    
    /*------- Margins -------*/
@@ -596,14 +608,6 @@
    section{
       margin: 15% 0;
    }
-   .section--txt-img{
-      display: flex;
-      flex-basis: 50%;
-      flex-wrap: wrap;
-   }
-   .section--txt-img div{
-      flex: 1;
-   }
    .section--img-txt{
       display: flex;
       flex-basis: 50%;
@@ -611,9 +615,6 @@
    }
    .section--img-txt div{
       flex: 1;
-   }
-   .section--full-width{
-
    }
 
    .flex-container{
@@ -628,7 +629,7 @@
       width: 100%;
       text-align: center;
       padding: 60px 0px;
-      margin-top: 50px;
+      margin-top: 120px;
    }
    footer p{
       margin: 0;
@@ -636,7 +637,7 @@
    footer .flex-container div{
       flex: 1;
       text-align: left;
-      padding: 0px 0px 0px 60px;
+      padding: 0px 0px 0px 30px;
    }
 
    .separator-right{

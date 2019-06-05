@@ -1,6 +1,7 @@
 import React from "react"
 import BtnPrimary from "../BtnPrimary/BtnPrimary"
 import RevealComponent from "../RevealComponent/RevealComponent";
+import styles from "./SectionImgTxt.module.css";
 
 export default (props) => {
 
@@ -12,10 +13,10 @@ export default (props) => {
                     {props.imageComponent} 
                 </RevealComponent>            
             </div>
-            <div>
+            <div className={styles.txtContainer}>
                 <RevealComponent aos="fade-left">
                     <div dangerouslySetInnerHTML={{ __html: props.content }} />
-                    <BtnPrimary link="/palvelut/" text="Lue lisää" />
+                    <BtnPrimary className="text-right" link="/palvelut/" text="Lue lisää" />
                 </RevealComponent>            
             </div>
         </section>
