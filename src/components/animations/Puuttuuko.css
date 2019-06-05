@@ -3,9 +3,11 @@
     width: 100%;
     height: auto;
 }
+
 .puuttuukoContent1{
     position: relative;
 }
+
 .puuttuukoContent2{
     position: absolute;
     top: 7%;
@@ -15,13 +17,15 @@
     z-index: 0;
     transform: translateX(-50%);
 }
-.puuttuukoContent2 path{
+
+[data-aos="draw"] svg path{
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
-    animation: dash 5s ease-in forwards;
+    -webkit-transition: all 3s ease-in;
+    -moz-transition: all 3s ease-in;
+    -o-transition: all 3s ease-in;
+    transition: all 3s ease-in;    
 }
-@keyframes dash {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
+[data-aos="draw"].aos-animate svg path{
+    stroke-dashoffset: 0;
+}

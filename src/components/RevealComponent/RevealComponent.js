@@ -16,7 +16,7 @@ export default Watch(
     componentDidMount() {
         this.aos = AOS;
         this.aos.init({
-            duration: 2000
+            duration: 1000
         });
     }
 

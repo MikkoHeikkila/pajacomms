@@ -27,12 +27,16 @@
     top: 0%;
     right: 4%;
     width: 10%;
-    transform: translate(0%,0%);
-    z-index: 3;
-    animation: rocket 2s ease-in-out;
+    z-index: 3;  
 }
 
-@keyframes rocket {
-    0% {transform: translate(-219%,187%);}
-    100% {transform: translate(0%,0%);}
+[data-aos="pulaaAnimations"] .pulaaContent4{
+    transform: translate(-219%,187%);
+    -webkit-transition: transform 2s ease-in-out;
+    -moz-transition: transform 2s ease-in-out;
+    -o-transition: transform 2s ease-in-out;
+    transition: transform 2s ease-in-out;   
+}
+[data-aos="pulaaAnimations"].aos-animate .pulaaContent4{
+    transform: translate(0%,0%);
 }

@@ -36,11 +36,32 @@ export default ({ data }) => {
                 <html lang={currentPage.polylang_current_lang} />
             </Helmet>
 
-            <SectionHero content={currentPage.content} imageComponent={Muutos} />
-            <SectionImgTxt content={currentPage.acf.rivi_2} imageComponent={Pulaa}/>
-            <SectionFullWidth content={currentPage.acf.rivi_3} imageComponent={Puuttuuko} showBtn={true}/>
-            <SectionTxtImg content={currentPage.acf.rivi_4} imageComponent={Medianakyvyys}/>
-            <SectionFullWidth content={currentPage.acf.rivi_5} imageComponent={Superman} showBtn={true} />
+            <SectionHero 
+                content={currentPage.content} 
+                imageComponent={Muutos}
+            />
+
+            <SectionImgTxt 
+                content={currentPage.acf.rivi_2} 
+                imageComponent={Pulaa}
+            />
+
+            <SectionFullWidth 
+                content={currentPage.acf.rivi_3} 
+                imageComponent={Puuttuuko}
+                showBtn={true}
+            />
+
+            <SectionTxtImg 
+                content={currentPage.acf.rivi_4} 
+                imageComponent={Medianakyvyys}
+            />
+
+            <SectionFullWidth 
+                content={currentPage.acf.rivi_5} 
+                imageComponent={Superman}
+                showBtn={true}
+            />
 
         </Layout>
 
