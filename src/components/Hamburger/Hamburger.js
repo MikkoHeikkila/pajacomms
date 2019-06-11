@@ -2,7 +2,7 @@ import React, { Component } from "react"
 
 function toggleNavigation(){
     document.getElementById("nav-button").classList.toggle("is-active");
-    document.getElementById("main-nav-container").classList.toggle("active");
+    document.getElementById("mobile-nav-container").classList.toggle("active");
  }
 
 class Hamburger extends Component {

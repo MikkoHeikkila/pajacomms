@@ -7,8 +7,8 @@ export default (props) => {
 
     return(    
     
-        <section className="section--img-txt">
-            <div>
+        <section className={styles.sectionImgTxt}>
+            <div className={styles.imgContainer}>
                 <RevealComponent aos="fade-right">
                     {props.imageComponent} 
                 </RevealComponent>            

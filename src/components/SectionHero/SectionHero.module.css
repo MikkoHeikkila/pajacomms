@@ -14,3 +14,20 @@
 .imageContainer{
     width: 100%;
 }
+
+@media only screen and (max-width: 768px) {
+    .textContainer h1{
+        max-width: 100%;
+    }
+    .imageContainer{
+        width: 100%;
+        max-width: 400px;
+    }
+    .heroContainer{
+        flex-direction: column-reverse;
+    }
+    .textContainer{
+        max-width: 100%;
+        text-align: center;
+    }
+}

@@ -9,3 +9,13 @@
 .txtContainer{
     max-width: 375px;
 }
+
+@media only screen and (max-width: 768px) {
+    .sectionTxtImg{
+        flex-direction: column-reverse;
+    }
+    .txtContainer{
+        max-width: 100%;
+        text-align: center;
+    }
+}

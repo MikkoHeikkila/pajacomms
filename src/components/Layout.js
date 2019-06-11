@@ -3,6 +3,7 @@ import Header from "./Header"
 import Container from "./Container/Container"
 import Footer from "./Footer"
 import GlobalStyles from "../styles/createGlobalStyle"
+import MobileNavigation from "./MobileNavigation/MobileNavigation";
 
 export default ({children}) => (
 
@@ -13,6 +14,7 @@ export default ({children}) => (
       <main>
 
         <Header />
+        <MobileNavigation />
 
         <Container>
 

@@ -1,3 +1,11 @@
+.sectionImgTxt{
+    display: flex;
+    flex-basis: 50%;
+    flex-wrap: wrap;
+}
+.sectionImgTxt div{
+    flex: 1;
+}
 .txtContainer{
     text-align: right;
     max-width: 350px;
@@ -5,4 +13,22 @@
 .txtContainer h2{
     max-width: 275px;
     margin: 0px 0px 30px auto;    
+}
+
+@media only screen and (max-width: 768px) {
+    .sectionImgTxt{
+        flex-direction: column;
+    }
+    .txtContainer{
+        max-width: 100%;
+        margin-top: 60px;
+        text-align: center;
+    }
+    .txtContainer h2{
+        max-width: 100%;  
+    }
+    .imgContainer{
+        max-width: 500px;
+        margin: 0 auto;
+    }
 }

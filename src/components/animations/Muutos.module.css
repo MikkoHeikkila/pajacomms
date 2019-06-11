@@ -9,43 +9,46 @@
     animation-duration: 35000ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear; 
-    -webkit-transform-origin: 48.45% 50%;
-    transform-origin: 48.45% 50%;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
 }
 .muutosContent2{
     position: absolute;
     z-index: 0;
     top: 16%;
-    width: 66%;
-    left: 49%;
+    width: 64%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 }
 
 .maapallo{
     position: absolute;
-    top: 44.6%;
+    top: 50%;
+    left: 50%;
     width: 12.1%;
-    z-index: 9;
-    left: 43.9%;
-    animation-name: spinreverse;
-    animation-duration: 65000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; 
-    -webkit-transform-origin: 49.8% 46.5%;
-    transform-origin: 49.8% 46.5%;
+    z-index: 9; 
+    transform: translate(-50%, -50%);
 }
 .nuoli{
     position: absolute;
-    top: 41.5%;
     z-index: 9;
-    width: 16.5%;
-    left: 41.5%;
+    width: 15.9%;
+    top: 49.5%;
+    left: 50%;
+    /*
+    -webkit-animation-name: spin;
     animation-name: spin;
+    -webkit-animation-duration: 65000ms;
     animation-duration: 65000ms;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
-    animation-timing-function: linear; 
-    -webkit-transform-origin: 50% 49%;
-    transform-origin: 50% 49%;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-transform-origin: 51% 48%;
+    transform-origin: 51% 48%;
+    */
+    transform: translate(-50%, -50%);
 }
 
 @keyframes spin {
