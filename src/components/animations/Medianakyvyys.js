@@ -2,22 +2,46 @@ import React from "react"
 import Media1SVG from "../../images/media1.svg"
 import Media2SVG from "../../images/media2.svg"
 import Media3SVG from "../../images/media3.svg"
-import styles from "./Medianakyvyys.module.css"
+import Media4SVG from "../../images/media_lappari.svg"
+import "./Medianakyvyys.css"
 
-class Medianakyvyys extends React.Component {
+import AOS from 'aos';
+import { Watch } from 'scrollmonitor-react';
+import 'aos/dist/aos.css'
 
-    render() {
-        return(
+const View = props => (
+    <div data-aos="mediaAnimations">
+        { props.children }
+    </div>
+);
 
-            <div className={styles.mediaContainer}>
-                <div className={styles.mediaContent1}><Media1SVG /></div>
-                <div className={styles.mediaContent2}><Media2SVG /></div>
-                <div className={styles.mediaContent3}><Media3SVG /></div>
-            </div> 
+export default Watch(
 
-        ) 
+    class Medianakyvyys extends React.Component {
+
+        componentDidMount() {
+            this.aos = AOS;
+            this.aos.init({
+                duration: 0
+            });
+        }
+
+        componentDidUpdate() {
+            this.aos.refresh();
+        }
+
+        render() {
+            return(
+
+                <View content={this.props.children}>
+                    <div className="mediaContainer">
+                        <div className="mediaContent1"><Media4SVG /></div>
+                        <div className="mediaContent2"><Media2SVG /></div>
+                        <div className="mediaContent3"><Media3SVG /></div>
+                    </div> 
+                </View>
+
+            ) 
+        }
     }
-
-}
-
-export default Medianakyvyys
+);

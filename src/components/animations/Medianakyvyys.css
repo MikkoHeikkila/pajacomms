@@ -1,0 +1,49 @@
+.mediaContainer{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.mediaContent1{
+    position: relative;
+    width: 100%;
+    padding-top: 18%;
+}
+.mediaContent2{
+    position: absolute;
+    top: 11.1%;
+    width: 37.6%;
+    left: 23%;
+}
+.mediaContent3{
+    position: absolute;
+    top: 2%;
+    width: 16%;
+    left: 11%;
+}
+.mediaContent3 line{
+    stroke-dasharray: 0px;
+    stroke-dashoffset: 0px;
+    stroke-dasharray: 50px;
+}
+
+[data-aos="mediaAnimations"] .mediaContent3 line{
+    stroke-dashoffset: 50px;
+    -webkit-transition: all 0.5s ease-in 0.5s;
+    -moz-transition: all 0.5s ease-in 0.5s;
+    -o-transition: all 0.5s ease-in 0.5s;
+    transition: all 0.5s ease-in 0.5s;    
+}
+[data-aos="mediaAnimations"].aos-animate .mediaContent3 line{
+    stroke-dashoffset: 0px;
+}
+
+[data-aos="mediaAnimations"] .mediaContent2{
+    transform: rotate(13deg) scale(0.9) translate(30%, 15%);
+    -webkit-transition: all 0.5s cubic-bezier(0.505, 0.070, 0.290, 1.250);
+    -moz-transition: all 0.5s cubic-bezier(0.505, 0.070, 0.290, 1.250);
+    -o-transition: all 0.5s cubic-bezier(0.505, 0.070, 0.290, 1.250);
+    transition: all 0.5s cubic-bezier(0.505, 0.070, 0.290, 1.250);    
+}
+[data-aos="mediaAnimations"].aos-animate .mediaContent2{
+    transform: rotate(0deg) scale(1) translate(0%, 0%);
+}

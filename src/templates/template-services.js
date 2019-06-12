@@ -3,8 +3,6 @@ import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Container from "../components/Container/Container"
 import Layout from "../components/Layout";
-//import BtnPrimary from "../components/BtnPrimary/BtnPrimary";
-import Person from "../components/Person/Person";
 
 class PageTemplate extends Component {
 
