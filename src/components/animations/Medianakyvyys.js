@@ -3,6 +3,8 @@ import Media1SVG from "../../images/media1.svg"
 import Media2SVG from "../../images/media2.svg"
 import Media3SVG from "../../images/media3.svg"
 import Media4SVG from "../../images/media_lappari.svg"
+import Media5SVG from "../../images/lappari_yla.svg"
+import Media6SVG from "../../images/lappari_ala.svg"
 import "./Medianakyvyys.css"
 
 import AOS from 'aos';
@@ -35,9 +37,14 @@ export default Watch(
 
                 <View content={this.props.children}>
                     <div className="mediaContainer">
-                        <div className="mediaContent1"><Media4SVG /></div>
+
+                        <div className="mediaContent5"><Media5SVG /></div>
+                        
                         <div className="mediaContent2"><Media2SVG /></div>
                         <div className="mediaContent3"><Media3SVG /></div>
+
+                        <div className="mediaContent6"><Media6SVG /></div>
+
                     </div> 
                 </View>
 

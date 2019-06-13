@@ -10,15 +10,15 @@
 }
 .mediaContent2{
     position: absolute;
-    top: 11.1%;
+    top: -15.9%;
     width: 37.6%;
-    left: 23%;
+    left: 24%;
 }
 .mediaContent3{
     position: absolute;
-    top: 2%;
+    top: -29%;
     width: 16%;
-    left: 11%;
+    left: 13%;
 }
 .mediaContent3 line{
     stroke-dasharray: 0px;
@@ -26,23 +26,36 @@
     stroke-dasharray: 50px;
 }
 
+.mediaContent5{
+    position: relative;
+    margin-bottom: -5px;
+    left: 29.8%;
+    width: 49.7%;
+}
+.mediaContent6{
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+}
+
 [data-aos="mediaAnimations"] .mediaContent3 line{
     stroke-dashoffset: 50px;
-    -webkit-transition: all 0.5s ease-in 0.5s;
-    -moz-transition: all 0.5s ease-in 0.5s;
-    -o-transition: all 0.5s ease-in 0.5s;
-    transition: all 0.5s ease-in 0.5s;    
+    -webkit-transition: all 0.5s ease-in 1s;
+    -moz-transition: all 0.5s ease-in 1s;
+    -o-transition: all 0.5s ease-in 1s;
+    transition: all 0.5s ease-in 1s;    
 }
 [data-aos="mediaAnimations"].aos-animate .mediaContent3 line{
     stroke-dashoffset: 0px;
 }
 
 [data-aos="mediaAnimations"] .mediaContent2{
-    transform: rotate(13deg) scale(0.9) translate(30%, 15%);
-    -webkit-transition: all 0.5s cubic-bezier(0.505, 0.070, 0.290, 1.250);
-    -moz-transition: all 0.5s cubic-bezier(0.505, 0.070, 0.290, 1.250);
-    -o-transition: all 0.5s cubic-bezier(0.505, 0.070, 0.290, 1.250);
-    transition: all 0.5s cubic-bezier(0.505, 0.070, 0.290, 1.250);    
+    transform: rotate(29deg) scale(0.8) translate(105%, 18%);
+    -webkit-transition: all 1s cubic-bezier(0.505, 0.070, 0.290, 1.250);
+    -moz-transition: all 1s cubic-bezier(0.505, 0.070, 0.290, 1.250);
+    -o-transition: all 1s cubic-bezier(0.505, 0.070, 0.290, 1.250);
+    transition: all 1s cubic-bezier(0.505, 0.070, 0.290, 1.250);    
 }
 [data-aos="mediaAnimations"].aos-animate .mediaContent2{
     transform: rotate(0deg) scale(1) translate(0%, 0%);
